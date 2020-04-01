@@ -33,8 +33,9 @@
 									<div data-conv-fork="lang-selector">
 
 	                                    <div data-conv-case="english">
-											<input type="text" name="name" data-conv-question="Alright! First, tell me your full name, please.|Okay! Please, tell me your name first.">
+											<input type="text" id="username" name="name" data-conv-question="Alright! First, tell me your full name, please.|Okay! Please, tell me your name first.">
 											<input data-conv-question="Type in your e-mail" data-pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" id="email" type="email" name="email" required placeholder="What's your e-mail?">
+											<input data-conv-question="Type in your phone number" data-pattern="[0-9]{11}" id="phone" type="tel" name="phone" required placeholder="What's your phone number?">
 
 											<!-- (note that this question doesn't expect any answer) -->
 											<input type="text" data-conv-question="Hello, {name}:0! It's a pleasure to meet you." data-no-answer="true">
@@ -153,8 +154,9 @@
 										</div>
 
 										<div data-conv-case="pidgin">
-											<input type="text" name="name" data-conv-question="Oya! Abeg, first tell me your correct original name.|No wahala! Abeg, try tell me your correct name.">
+											<input type="text" id="username" name="name" data-conv-question="Oya! Abeg, first tell me your correct original name.|No wahala! Abeg, try tell me your correct name.">
 											<input data-conv-question="Write your e-mail for here" data-pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" id="email" type="email" name="email" required placeholder="Na wetin be your e-mail?">
+											<input data-conv-question="Write your phone number for here" data-pattern="[0-9]{11}" id="phone" type="tel" name="phone" required placeholder="Wetin be your phone number?">
 
 											<!-- (note that this question doesn't expect any answer) -->
 											<input type="text" data-conv-question="Weldone o, {name}:0! I happy to see you for here." data-no-answer="true">
@@ -270,9 +272,10 @@
 										</div>
 											
 										<div data-conv-case="hausa">
-											<input type="text" name="name" data-conv-question="Gaskiya! Da farko, gaya mani cikakken sunanka, don Allah.|
+											<input type="text" id="username" name="name" data-conv-question="Gaskiya! Da farko, gaya mani cikakken sunanka, don Allah.|
 											Lafiya! Don Allah, gaya mani sunanka da farko.">
 											<input data-conv-question="Rubuta a cikin imel" data-pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" id="email" type="email" name="email" required placeholder="Menene imel?">
+											<input data-conv-question="Rubuta a lambar wayarka" data-pattern="[0-9]{11}" id="phone" type="tel" name="phone" required placeholder="Menene lambar wayar ku?">
 
 											<!-- (note that this question doesn't expect any answer) -->
 											<input type="text" data-conv-question="Sannu, {name}:0! Abun farin ciki ne in hadu da ku." data-no-answer="true">
@@ -387,8 +390,9 @@
 											
 
 										<div data-conv-case="igbo">
-											<input type="text" name="name" data-conv-question="Daalu! Buru ụzọ gwa m aha gị nke ọma, biko.|Ọ dị mma! Biko, buru ụzọ gwa m aha gị.">
+											<input type="text" id="username" name="name" data-conv-question="Daalu! Buru ụzọ gwa m aha gị nke ọma, biko.|Ọ dị mma! Biko, buru ụzọ gwa m aha gị.">
 											<input data-conv-question="Pịnye n’ime e-mail gị" data-pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" id="email" type="email" name="email" required placeholder="Kedu ihe bụ email gị?">
+											<input data-conv-question="Pịnye na akara ekwentị gị" data-pattern="[0-9]{11}" id="phone" type="tel" name="phone" required placeholder="Kedu nọmba ekwentị gị?">
 
 											<!-- (note that this question doesn't expect any answer) -->
 											<input type="text" data-conv-question="Nnọọ, {name}:0! Ọ bụ ihe obi ụtọ izute gị." data-no-answer="true">
@@ -504,8 +508,9 @@
 										</div>
 											
 										<div data-conv-case="yoruba">
-											<input type="text" name="name" data-conv-question="Dara! Ni akọkọ, sọ fun orukọ rẹ ni kikun, jọwọ.|Dara! Jọwọ, sọ orukọ rẹ fun mi lakoko.">
+											<input type="text" id="username" name="name" data-conv-question="Dara! Ni akọkọ, sọ fun orukọ rẹ ni kikun, jọwọ.|Dara! Jọwọ, sọ orukọ rẹ fun mi lakoko.">
 											<input data-conv-question="Tẹ ninu imeeli rẹ" data-pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" id="email" type="email" name="email" required placeholder="Kini imeeli rẹ?">
+											<input data-conv-question="Tẹ nọmba foonu rẹ" data-pattern="[0-9]{11}" id="phone" type="tel" name="phone" required placeholder="Kini nọmba foonu rẹ?">
 
 											<!-- (note that this question doesn't expect any answer) -->
 											<input type="text" data-conv-question="Pẹlẹ o, {name}:0! O jẹ igbadun lati pade rẹ." data-no-answer="true">
