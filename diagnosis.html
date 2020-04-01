@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 REPORTER</title>
+    <link rel="icon" type="image/ico" href="images/sc-icon.ico">
+    <link rel="manifest" href="manifest.json" />
+    <!-- ios support -->
+    <link rel="apple-touch-icon" href="/images/sc-icon72.png" />
+    <link rel="apple-touch-icon" href="/images/sc-icon96.png" />
+    <link rel="apple-touch-icon" href="/images/sc-icon144.png" />
+    <link rel="apple-touch-icon" href="/images/sc-icon.png" />
+    <meta name="apple-mobile-web-app-status-bar" content="#e66465" />
+    <meta name="theme-color" content="#e66465" />
+    <script charset="UTF-8" src="//web.webpushs.com/js/push/422c94e8ff407466065446d79cd0c67c_1.js" async></script>
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <!--Body Container-->
+    <div class="container-fluid text-center sticky-top nav-shadow" id="lago">
+      <a href="#"><h3>COVID-19 REPORTER</h3></a>
+    </div>
+    <div class="container-fluid d-none d-lg-block" id="nav-shadow" style="padding: 0em;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top nav-shadow" id="navDesktop">
+      <a class="navbar-brand" href="#"><h3>COVID-19 REPORTER</h3></a>
+        <button class="navbar-toggler" hidden type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#cases">Cases</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#response">Response</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#psd">Covid</a>
+              </li>
+          </ul>
+        </div>
+    </nav>
+    </div>
+    <div class="container-fluid" id="aligner">
+    <nav class="navbar navbar-light bg-light fixed-bottom nav-bottom-shadow" id="hide-desktop">
+      <a class="navbar-brand" style="padding-left: 1em;"  href="#"><img src="images/home.svg" onmouseover="this.src='images/home-hover.svg'" onmouseout="this.src='images/home.svg'" alt="logo"></a>
+      <a class="navbar-brand"  href="/prevention.html"><img src="images/prevention.svg"  onmouseover="this.src='images/prev-hover.svg'" onmouseout="this.src='images/prevention.svg'" alt="logo"></a>
+      <a class="navbar-brand"  href="/symptoms.html"><img src="images/symptoms.svg" alt="logo"></a>
+      <a class="navbar-brand"  href="#"><img src="images/diagnosis.svg" onmouseover="this.src='images/diag-hover.svg'" onmouseout="this.src='images/diagnosis.svg'" alt="logo"></a>
+    </nav>
+    </div>
+    <div class="container-fluid text-center" style="margin: 1em auto; padding-top: 2em;"><h3>Check your status</h3></div>
+    <div class="container-fluid" style="margin: auto; background-color: black;">
+        <div class="row text-center" style="padding: 2em;">            
+              <div class="col-sm-6 col-lg-6">
+                <div class="panel" style="color: gray;">Do you have cough?</div><p></p>
+                  <div class="btn-group btn-group-toggle" data-toggle="buttons" style="padding-bottom: 1em;">
+                    <label for="" class="btn btn-warning">
+                      <input type="radio" name="q1" id="option1" value="1">Yes
+                    </label>
+                    <label for="" class="btn btn-primary">
+                      <input type="radio" name="q1" id="option2" value="0">No
+                    </label>
+                  </div>
+              </div><p></p>
+              <div class="col-sm-6 col-lg-6">
+                <div class="panel" style="color: gray;">Do you have cold?</div><p></p>
+                  <div class="btn-group btn-group-toggle" data-toggle="buttons" style="padding-bottom: 1em;">
+                    <label for="" class="btn btn-warning">
+                      <input type="radio" name="q2" id="option1" value="1">Yes
+                    </label>
+                    <label for="" class="btn btn-primary">
+                      <input type="radio" name="q2" id="option2" value="0">No
+                    </label>
+                  </div>
+              </div><p></p>
+              <div class="col-sm-6 col-lg-6">
+                <div class="panel" style="color: gray;">Are you having Diarrhea?</div><p></p>
+                  <div class="btn-group btn-group-toggle" data-toggle="buttons" style="padding-bottom: 1em;">
+                    <label for="" class="btn btn-warning">
+                      <input type="radio" name="q3" id="option1" value="1">Yes
+                    </label>
+                    <label for="" class="btn btn-primary">
+                      <input type="radio" name="q3" id="option2" value="0">No
+                    </label>
+                  </div>
+              </div><p></p>
+              <div class="col-sm-6 col-lg-6">
+                <div class="panel" style="color: gray;">Do you have sore throat?</div><p></p>
+                  <div class="btn-group btn-group-toggle" data-toggle="buttons" style="padding-bottom: 1em;">
+                    <label for="" class="btn btn-warning">
+                      <input type="radio" name="q4" id="option1" value="1">Yes
+                    </label>
+                    <label for="" class="btn btn-primary">
+                      <input type="radio" name="q4" id="option2" value="0">No
+                    </label>
+                  </div>
+              </div><p></p>
+              <div class="col-sm-6 col-lg-6">
+                <div class="panel" style="color: gray;">Are you experiencing MYALGIA or Body Aches?</div><p></p>
+                  <div class="btn-group btn-group-toggle" data-toggle="buttons" style="padding-bottom: 1em;">
+                    <label for="" class="btn btn-warning">
+                      <input type="radio" name="q5" id="option1" value="1">Yes
+                    </label>
+                    <label for="" class="btn btn-primary">
+                      <input type="radio" name="q5" id="option2" value="0">No
+                    </label>
+                  </div>
+              </div><p></p>
+              <div class="col-sm-6 col-lg-6">
+                <div class="panel" style="color: gray;">Do you have a headache?</div><p></p>
+                  <div class="btn-group btn-group-toggle" data-toggle="buttons" style="padding-bottom: 1em;">
+                    <label for="" class="btn btn-warning">
+                      <input type="radio" name="q6" id="option1" value="1">Yes
+                    </label>
+                    <label for="" class="btn btn-primary">
+                      <input type="radio" name="q6" id="option2" value="0">No
+                    </label>
+                  </div>
+              </div><p></p>
+              <div class="col-sm-6 col-lg-6">
+                <div class="panel" style="color: gray;">Do you have fever (Temperature 37.8<sup>o</sup>c and above ?</div><p></p>
+                  <div class="btn-group btn-group-toggle" data-toggle="buttons" style="padding-bottom: 1em;">
+                    <label for="" class="btn btn-warning">
+                      <input type="radio" name="q7" id="option1" value="1">Yes
+                    </label>
+                    <label for="" class="btn btn-primary">
+                      <input type="radio" name="q7" id="option2" value="0">No
+                    </label>
+                  </div>
+              </div><p></p>
+              <div class="col-sm-6 col-lg-6">
+                <div class="panel" style="color: gray;">Are you having difficulty breathing?</div><p></p>
+                  <div class="btn-group btn-group-toggle" data-toggle="buttons" style="padding-bottom: 1em;">
+                    <label for="" class="btn btn-warning">
+                      <input type="radio" name="q8" id="option1" value="2">Yes
+                    </label>
+                    <label for="" class="btn btn-primary">
+                      <input type="radio" name="q8" id="option2" value="0">No
+                    </label>
+                  </div>
+              </div><p></p>
+              <div class="col-sm-6 col-lg-6">
+                <div class="panel" style="color: gray;">Are you experiencing Fatigue?</div><p></p>
+                  <div class="btn-group btn-group-toggle" data-toggle="buttons" style="padding-bottom: 1em;">
+                    <label for="" class="btn btn-warning">
+                      <input type="radio" name="q9" id="option1" value="2">Yes
+                    </label>
+                    <label for="" class="btn btn-primary">
+                      <input type="radio" name="q9" id="option2" value="0">No
+                    </label>
+                  </div>
+              </div><p></p>
+              <div class="col-sm-6 col-lg-6">
+                <div class="panel" style="color: gray;">Have you traveled recently during the past 14 days?</div><p></p>
+                  <div class="btn-group btn-group-toggle" data-toggle="buttons" style="padding-bottom: 1em;">
+                    <label for="" class="btn btn-warning">
+                      <input type="radio" name="q10" id="option1" value="3">Yes
+                    </label>
+                    <label for="" class="btn btn-primary">
+                      <input type="radio" name="q10" id="option2" value="0">No
+                    </label>
+                  </div>
+              </div><p></p>
+              <div class="col-sm-6 col-lg-6">
+                <div class="panel" style="color: gray;">Do you have a travel history to a COVID-19 infected area?</div><p></p>
+                  <div class="btn-group btn-group-toggle" data-toggle="buttons" style="padding-bottom: 1em;">
+                    <label for="" class="btn btn-warning">
+                      <input type="radio" name="q11" id="option1" value="3">Yes
+                    </label>
+                    <label for="" class="btn btn-primary">
+                      <input type="radio" name="q11" id="option2" value="0">No
+                    </label>
+                  </div>
+              </div><p></p>
+              <div class="col-sm-6 col-lg-6">
+                <div class="panel" style="color: gray;">Do you have direct contact or is taking care of a positive COVID-19 patients?</div><p></p>
+                  <div class="btn-group btn-group-toggle" data-toggle="buttons" style="padding-bottom: 1em;">
+                    <label for="" class="btn btn-warning">
+                      <input type="radio" name="q12" id="option1" value="3">Yes
+                    </label>
+                    <label for="" class="btn btn-primary">
+                      <input type="radio" name="q12" id="option2" value="0">No
+                    </label>
+                  </div>
+              </div>
+             
+              <div style="margin: 1em auto;">
+              <input class="btn btn-danger btn-lg" style="margin: 2em;" id="submitButton" data-toggle="modal" data-target="#staticBackdrop" onClick="submitQuiz()"
+              type="submit" value="Check Status" />
+              </div> <p></p>
+
+            <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Diagnosis Result</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body" id="userScore"></div>
+                  <div class="modal-footer">
+                    <input class="btn btn-danger" data-dismiss="modal" type="reset" value="Understood" />
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Covid-bot Button Starts -->
+    <a href="#" data-toggle="modal" data-target="#myModal" class="fly-button openBtn">
+      <img class="fly-position openBtn" src="images/chatbot.svg" width="24px" height="24px" alt="">
+    </a>
+    <div class="modal fade" id="myModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+        <div class="modal-content" style="height: 100% ;">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Covid-bot</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <embed src="covid-bot.html" height="150%">
+        </div>
+      </div>
+    </div>
+    <!-- Floating Covid-bot Button ends -->
+    
+    <div class="container-fluid text-center d-none d-lg-block" id="footerContainer">
+        <div class="row" id="footerRow">
+            <div class="col-md-12" id="footerCol">
+                    <p>© 2019 Semicolon Talent Company Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+    <!--Body Container-->
+</body>
+</html>
+<script src="covidjs/status.js"></script>
+<script src="covidjs/covidjs.js"></script>
+<script src="covidjs/app.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>

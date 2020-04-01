@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 REPORTER</title>
+    <link rel="icon" type="image/ico" href="images/sc-icon.ico">
+    <link rel="manifest" href="manifest.json" />
+    <!-- ios support -->
+    <link rel="apple-touch-icon" href="/images/sc-icon72.png" />
+    <link rel="apple-touch-icon" href="/images/sc-icon96.png" />
+    <link rel="apple-touch-icon" href="/images/sc-icon144.png" />
+    <link rel="apple-touch-icon" href="/images/sc-icon.png" />
+    <meta name="apple-mobile-web-app-status-bar" content="#e66465" />
+    <meta name="theme-color" content="#e66465" />
+    <script charset="UTF-8" src="//web.webpushs.com/js/push/422c94e8ff407466065446d79cd0c67c_1.js" async></script>
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <!--Body Container-->
+    <div class="container-fluid text-center sticky-top nav-shadow" id="lago">
+      <a href="#"><h3>COVID-19 REPORTER</h3></a>
+    </div>
+
+    <div class="container-fluid d-none d-lg-block" id="nav-shadow" style="padding: 0em;">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top nav-shadow" id="navDesktop">
+        <a class="navbar-brand" href="#"><h3>COVID-19 REPORTER</h3></a>
+          <button class="navbar-toggler" hidden type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#cases">Cases</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#response">Response</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#psd">Covid</a>
+              </li>
+            </ul>
+          </div>
+      </nav>
+    </div>
+
+    <div class="container-fluid" id="aligner">
+      <nav class="navbar navbar-light bg-light fixed-bottom nav-bottom-shadow" id="hide-desktop">
+        <a class="navbar-brand" style="padding-left: 1em;"  href="#"><img src="images/home.svg" onmouseover="this.src='images/home-hover.svg'" onmouseout="this.src='images/home.svg'" alt="logo"></a>
+        <a class="navbar-brand"  href="/prevention.html"><img src="images/prevention.svg"  onmouseover="this.src='images/prev-hover.svg'" onmouseout="this.src='images/prevention.svg'" alt="logo"></a>
+        <a class="navbar-brand"  href="/symptoms.html"><img src="images/symptoms.svg" alt="logo"></a>
+        <a class="navbar-brand"  href="/diagnosis.html"><img src="images/diagnosis.svg" onmouseover="this.src='images/diag-hover.svg'" onmouseout="this.src='images/diagnosis.svg'" alt="logo"></a>
+      </nav>
+    </div>
+    
+    <div class="container-fluid front" id="hide-wall">
+      <div class="row">
+          <div class="jumbotron text-center innerJumbo" style="background-color: black;">
+              <h2 class="switHead">COVID-19 - Nigeria</h2>
+              <p class="text-center switHeadSub"> <em>Do not panic - Stay at home, Stay safe</em></p>
+          </div>
+      </div>
+    </div>
+
+    <div class="card text-white text-left p-3" id="hide-desktop" style="border-radius: 0em; margin: 0em; background-color: #FB5757;">
+      <p id="date"></p>
+      <h5>Corona Virus Cases - Nigeria</h5>
+      <h1 style="font-weight: bolder;" id="cases"></h1>
+      <blockquote class="blockquote mb-0">
+        <footer class="blockquote-footer text-white">
+          <small>
+            Do not panic <cite title="Source Title">Just stay at home</cite>
+          </small>
+        </footer>
+      </blockquote>
+    </div>
+
+    <div class="container-fluid" style="margin: 1em auto;">
+      <div class="row text-center" style="padding: 1em;">
+        <div class="col-6 col-lg-6">
+          <div class="panel" style="color: gray;">DEATHS <p style="color: #FB5757;" id="death">2</p><p><img src="images/death.svg" alt=""></p></div>
+        </div>
+        <div class="col-6 col-lg-6">
+          <div class="panel" style="color: gray;">RECOVERED <p style="color: #FB5757;" id="recover">8</p><p><img src="images/recover.svg" alt=""></p> </div>
+        </div>
+        <div class="col-sm-6 col-lg-6">
+          <div class="panel" style="color: gray;">ACTIVE CASES<p style="color: #FB5757;" id="active"></p></div>
+        </div>
+        <div class="col-sm-6 col-lg-6">
+          <div class="panel" style="color: gray;">CLOSED CASES<p style="color: #FB5757;" id="closed">10</p></div>
+        </div>
+      </div>
+    </div>  
+    <!-- </div> -->
+
+    <div class="container-fluid" id="cases">
+        <div class="row">
+            <div class="col-md-12 text-center" id="afterSlideRow">
+                <h2 id="afterSlideH2">Cases by States</h2>
+                <table class="table table-striped table-dark table-hover table-bordered" style="margin: 1em auto; width: 80%;">
+                  <thead>
+                    <tr class="text-justify">
+                      <th scope="col">State</th>
+                      <th scope="col">Cases</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="text-justify">
+                      <td scope="row" id="states"></td>
+                      <td scope="row" id="state_cases"></td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-light">
+      <div class="row">
+        <h2 style="text-align: center; margin: auto; padding: 0em;">Contact NCDC</h2>
+      </div>
+    </div>
+
+    <div class="container-fluid bg-light" style="margin: auto;">
+      <div class="row text-center" style="padding: 1em;">
+        <div class="col-6 col-lg-4">
+          <div class="panel" style="color: gray;">WHATSAPP<p style="color: #FB5757;" id=""></p><p><a href="https://api.whatsapp.com/send?phone=2347087110839"><img src="images/Whatsapp.svg" alt=""></a></p></div>
+        </div>
+        <div class="col-6 col-lg-4">
+          <div class="panel" style="color: gray;">FACEBOOK<p style="color: #FB5757;" id=""></p><p><a href="https://facebook.com/NCDCgov"><img src="images/Facebook.svg" alt=""></a></p></div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="panel" style="color: gray;">TWITTER<p style="color: #FB5757;" id=""></p><p><a href="https://twitter.com/NCDCgov"><img src="images/Twitter.svg" alt=""></a></p></div>
+        </div>
+        <!-- <div class="col-6 col-lg-6">
+          <div class="panel" style="color: gray;">SMS<p style="color: #FB5757;" id=""></p><p><a href="sms:+2348099555577?body=I need help, I need to be tested"><img src="images/Sms.svg" alt=""></a></p></div>
+        </div>
+        <div class="col-6 col-lg-6">
+          <div class="panel" style="color: gray;">Call<p style="color: #FB5757;" id=""></p><p><a href="tel:+2347087110839"><img src="images/calls.svg" alt=""></a></p></div>
+        </div> -->
+      </div>
+    </div>  
+
+    <div class="container-fluid" id="response">
+      <div class="row" style="padding-bottom: 5em;">
+          <div class="col-md-12 text-center">
+              <h2 id="afterSlideH2">Quick Response</h2>
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">State</th>
+                    <th scope="col">Telephone No.</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Abia</th>
+                    <td>--</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Adamawa</th>
+                    <td>--</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Akwa-Ibom</th>
+                    <td>--</td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+      </div>
+    </div>
+
+    <div class="container" id="hide-wall">
+        <div class="card-deck text-center" id="cardStyle">
+            <div class="card" id="cardStyle">
+              <img src="images/prev.svg" class="card-img-top" width="150px" height="45px" alt="logo">
+              <div class="card-body">
+                <h5 class="card-title">Prevention</h5>
+                <p class="card-text text-justify">Get informed details on steps to prevent the spread and contacting of the Covid-19 virus</p>
+                <a href="/prevention.html" class="btn btn-outline-danger">Prevention</a>
+              </div>
+            </div>
+            <div class="card" id="cardStyle">
+              <img src="images/symp.svg" class="card-img-top" width="150px" height="45px" alt="logo">
+              <div class="card-body">
+                <h5 class="card-title">Symptoms</h5>
+                <p class="card-text text-justify">Check out symptoms that could point if you need urgent attention with regards to the Covid-19 virus.</p>
+                <a href="/symptoms.html" class="btn btn-outline-danger">Symptoms</a>
+              </div>
+            </div>
+            <div class="card" id="cardStyle">
+              <img src="images/diag.svg" class="card-img-top" width="150px" height="45px" alt="logo">
+              <div class="card-body">
+                <h5 class="card-title">Diagnosis</h5>
+                <p class="card-text text-justify">Answer some questions regarding your present health status which could determine if you are a potential carrier of the Covid-19 virus</p>
+                <a href="/diagnosis.html" class="btn btn-outline-danger">Diagnosis</a>
+              </div>
+            </div>
+        </div>
+    </div>
+    <!-- Floating Covid-bot Button Starts -->
+    <a href="#" data-toggle="modal" data-target="#myModal" class="fly-button openBtn">
+      <img class="fly-position openBtn" src="images/chatbot.svg" width="24px" height="24px" alt="">
+    </a>
+    <div class="modal fade" id="myModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+        <div class="modal-content" style="height: 100% ;">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Covid-bot</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <embed src="covid-bot.html" height="150%">
+        </div>
+      </div>
+    </div>
+    <!-- Floating Covid-bot Button ends -->
+
+    <div class="container-fluid text-center d-none d-lg-block" id="footerContainer">
+        <div class="row" id="footerRow">
+            <div class="col-md-12" id="footerCol">
+                    <p>© 2019 Semicolon Talent Company Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+    <!--Body Container-->
+</body>
+</html>
+<script src="covidjs/covidjs.js"></script>
+<script src="covidjs/states.js"></script>
+<script src="covidjs/app.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>

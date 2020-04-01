@@ -1,0 +1,28 @@
+{
+  "name": "Covid-19 Reporter",
+  "short_name": "Covid-19 Reporter",
+  "description": "Covid-19 Reports For Nigeria",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#fdfdfd",
+  "theme_color": "#e66465",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/sc-icon72.png",
+      "type": "image/png", "sizes": "72x72"
+    },
+    {
+        "src": "/images/sc-icon96.png",
+        "type": "image/png", "sizes": "96x96"
+    },
+    {
+        "src": "/images/sc-icon.png",
+        "type": "image/png","sizes": "128x128"
+    },
+    {
+        "src": "/images/sc-icon144.png",
+        "type": "image/png","sizes": "144x144"
+    }
+  ]
+}

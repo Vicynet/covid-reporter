@@ -1,0 +1,153 @@
+        .front {
+            background-image: url("../images/dash.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            min-height: 620px;
+        }
+        .innerJumbo {
+            margin: 10em auto;
+            padding: 2em;
+            opacity: 0.7;
+        }
+        .accountJumbo {
+            margin: 6em auto;
+            width: 22em;
+            opacity: 0.9;
+            background-color: black;
+        }
+        .accountTitle {
+            font-size:3rem;
+            color: #ffffff;
+        }
+        .switHead {
+            font-size:5vw; 
+            font-weight:900; 
+            color: #ffffff;
+        }
+        .switHeadSub {
+            padding-top: 0.2em; 
+            font-size: 20px; 
+            color: #ffffff;
+        }
+        .switBtn {
+            background-color:#fc2d2d;
+        }
+        #navContainer {
+            padding: 0em;
+        }
+        #footerRow {
+            margin: auto; 
+            background-color: #fc2d2d;
+        }
+        #footerCol {
+            color: #ffffff; 
+            margin: 1em auto;
+        }
+        #footerContainer {
+            padding: 0em;
+        }
+        #formContainer {
+            margin-top: 3em; 
+            padding: 3em;
+        }
+        #cardStyle {
+            padding-top: 2em;
+            padding-bottom: 2em;
+        }
+        #cardDecker {
+            margin: 2em auto;
+        }
+        #afterSlideH2 {
+            font-weight: bolder;
+        }
+        #afterSlideRow {
+            padding-top: 1em;
+        }
+        #accountForm {
+            color: #ffffff;
+        }
+        body::-webkit-scrollbar {
+            width: 0.5em;
+        }
+ 
+        body::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+        }
+ 
+        body::-webkit-scrollbar-thumb {
+            background-color: darkgrey;
+            outline: 1px solid slategrey;
+            border-radius: 1em;
+        }
+        @media only screen and (min-width: 875px) {
+            #navDesktop {
+                padding-left: 8.5em;
+                padding-right: 8.5em;
+            }   
+        }
+        @media only screen and (min-width: 415px) {
+            #hide-desktop {
+                display: none;
+            }
+        }
+        @media only screen and (max-width: 415px) {
+            #hide-wall {
+                display: none;
+            }
+        }
+        @media only screen and (max-width: 415px) {
+            #lago {
+                padding: 0.5em;
+                background-color: white;
+            }
+        }
+        h3 {
+            color: #e66465;
+        }
+        .nav-shadow {
+            box-shadow: 0px 0px 5px -0px #111;    
+        }
+        .nav-bottom-shadow {
+            box-shadow: 0px -0px 5px -0px #111;    
+        }
+        #aligner {
+            text-align: center;
+            margin: 1em auto;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        
+        body {
+          margin: 4rem 0;
+        }
+         
+        h4 {
+          margin-bottom:2rem;
+          margin-top: 3rem;
+        }
+        
+        .panel {
+          border-radius: 0.3rem;
+          padding: 1rem;
+          margin-bottom: 1rem;
+          border: 1px solid #2d2d2d;
+        }
+        .fly-button{
+            position:fixed;
+            width:60px;
+            height:60px;
+            bottom:80px;
+            right:30px;
+            background-color:#e66465;
+            /* color:#FFF; */
+            border-radius:50px;
+            text-align:center;
+            box-shadow: 2px 2px 2px #999;
+        }
+        
+        .fly-position{
+            margin-top:22px;
+        }
+        
+        

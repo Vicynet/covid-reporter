@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 REPORTER</title>
+    <link rel="icon" type="image/ico" href="images/sc-icon.ico">
+    <link rel="manifest" href="manifest.json" />
+    <!-- ios support -->
+    <link rel="apple-touch-icon" href="/images/sc-icon72.png" />
+    <link rel="apple-touch-icon" href="/images/sc-icon96.png" />
+    <link rel="apple-touch-icon" href="/images/sc-icon144.png" />
+    <link rel="apple-touch-icon" href="/images/sc-icon.png" />
+    <meta name="apple-mobile-web-app-status-bar" content="#e66465" />
+    <meta name="theme-color" content="#e66465" />
+    <script charset="UTF-8" src="//web.webpushs.com/js/push/422c94e8ff407466065446d79cd0c67c_1.js" async></script>
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <!--Body Container-->
+    <div class="container-fluid text-center sticky-top nav-shadow" id="lago">
+      <a href="#"><h3>COVID-19 REPORTER</h3></a>
+    </div>
+    <div class="container-fluid d-none d-lg-block" id="nav-shadow" style="padding: 0em;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top nav-shadow" id="navDesktop">
+      <a class="navbar-brand" href="#"><h3>COVID-19 REPORTER</h3></a>
+        <button class="navbar-toggler" hidden type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#cases">Cases</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#response">Response</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#psd">Covid</a>
+              </li>
+          </ul>
+        </div>
+    </nav>
+    </div>
+    <div class="container-fluid" id="aligner">
+    <nav class="navbar navbar-light bg-light fixed-bottom nav-bottom-shadow" id="hide-desktop">
+      <a class="navbar-brand" style="padding-left: 1em;"  href="/index.html"><img src="images/home.svg" onmouseover="this.src='images/home-hover.svg'" onmouseout="this.src='images/home.svg'" alt="logo"></a>
+      <a class="navbar-brand"  href="#"><img src="images/prevention.svg"  onmouseover="this.src='images/prev-hover.svg'" onmouseout="this.src='images/prevention.svg'" alt="logo"></a>
+      <a class="navbar-brand"  href="/symptoms.html"><img src="images/symptoms.svg" alt="logo"></a>
+      <a class="navbar-brand"  href="/diagnosis.html"><img src="images/diagnosis.svg" onmouseover="this.src='images/diag-hover.svg'" onmouseout="this.src='images/diagnosis.svg'" alt="logo"></a>
+    </nav>
+    </div>
+    
+    <div class="container-fluid front" id="hide-wall">
+        <div class="row">
+            <div class="jumbotron text-center innerJumbo" style="background-color: black;">
+                <h2 class="switHead">COVID-19 - Prevention</h2>
+                <p class="text-center switHeadSub"> <em>Do not panic - Stay at home, Stay safe</em></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card text-white text-center p-3" id="hide-desktop" style="border-radius: 0em; margin: 0em; background-color: #FB5757;">
+      <iframe width="340" height="315" src="https://www.youtube.com/embed/9Ay4u7OYOhA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <div class="container-fluid" style="margin: 1em auto;">
+      <div class="row" style="padding: 1em; padding-bottom: 3em;">
+        <div class="col-sm-6 col-lg-6">
+          <div class="panel" style="color: gray;">
+            <p class="text-left">
+              <img src="images/mask.svg" alt="">
+              <span style="padding-left: 4em;">Wear a mask</span> 
+            </p>
+            <p style="color: #FB5757;">Severity of COVID-19 symptoms can range from very mild to severe fever</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-6">
+          <div class="panel" style="color: gray;">
+            <p class="text-left">
+              <img src="images/wash.svg" width="82px" height="82px" alt="">
+              <span style="padding-left: 4em;">Wash hands</span> 
+            </p>
+            <p style="color: #FB5757;">Regularly and thoroughly wash hands with soap under running water or use alcohol-based sanitizer if water is not available</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-6">
+          <div class="panel" style="color: gray;">
+            <p class="text-left">
+              <img src="images/shake.svg" width="82px" height="82px" alt="">
+              <span style="padding-left: 4em;">Avoid shakes</span> 
+            </p>
+            <p style="color: #FB5757;">Severity of COVID-19 symptoms can range from very mild to severe fever</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-6">
+          <div class="panel" style="color: gray;">
+            <p class="text-left">
+              <img src="images/self.svg" width="82px" height="82px" alt="">
+              <span style="padding-left: 4em;">Self-Isolate</span> 
+            </p>
+            <p style="color: #FB5757;">Stay home to keep others safe if you recently returned from travelling or not</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-6">
+          <div class="panel" style="color: gray;">
+            <p class="text-left">
+              <img src="images/contact.svg" width="82px" height="82px" alt="">
+              <span style="padding-left: 4em;">No contact</span> 
+            </p>
+            <p style="color: #FB5757;">Maintain at least 2 metres distance between yourself and anyone who is coughing or sneezing around you</p>
+          </div>
+        </div>
+        
+      </div>
+    </div>   
+    </div> 
+
+    <!-- Floating Covid-bot Button Starts -->
+    <a href="#" data-toggle="modal" data-target="#myModal" class="fly-button openBtn">
+      <img class="fly-position openBtn" src="images/chatbot.svg" width="24px" height="24px" alt="">
+    </a>
+    <div class="modal fade" id="myModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+        <div class="modal-content" style="height: 100% ;">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Covid-bot</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <embed src="covid-bot.html" height="150%">
+        </div>
+      </div>
+    </div>
+    <!-- Floating Covid-bot Button ends -->
+  
+    <div class="container-fluid text-center d-none d-lg-block" id="footerContainer">
+        <div class="row" id="footerRow">
+            <div class="col-md-12" id="footerCol">
+                    <p>© 2019 Semicolon Talent Company Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+    <!--Body Container-->
+</body>
+</html>
+<script src="covidjs/covidjs.js"></script>
+<script src="covidjs/app.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
