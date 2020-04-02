@@ -1,6 +1,12 @@
 
 var questionCounter = 20;
 
+var fullname = document.getElementById("fullname").value;
+var phoneNumber = document.getElementById("phone").value;
+var email = document.getElementById("email").value;
+var gender = document.getElementById("gender").value;
+var age = docment.getElementById("age").value;
+
 function submitQuiz(){
 	var elems = document.getElementsByClassName('stat');
 	var myLength = elems.length,
