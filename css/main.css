@@ -151,5 +151,10 @@
         .fly-position{
             margin-top:22px;
         }
-        
+        .map {
+            background-image: url('../images/world-map.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* opacity: 0.2; */
+        }
         

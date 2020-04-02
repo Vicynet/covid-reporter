@@ -34,6 +34,41 @@ dash.onload = function()
 dash.send();
 
 
+//World Statistics
+var world = new XMLHttpRequest()
+
+world.open('GET', 'https://api.covid19api.com/summary', true)
+//call the onload 
+world.onload = function() 
+{
+    //check if the status is 200(means everything is okay)
+    if (this.status === 200) 
+        {
+              var data = JSON.parse(this.responseText).Countries;
+              var cases = 0
+              var recovery = 0
+              var deaths = 0
+
+
+            for (i in data) {
+                if (data != 0) {
+                    cases += data[i].TotalConfirmed
+                    recovery += data[i].TotalRecovered
+                    deaths += data[i].TotalDeaths
+                }
+             
+              }
+            
+            document.getElementById("totalCases").innerHTML = cases;
+            document.getElementById("totalRecovery").innerHTML = recovery;
+            document.getElementById("totalDeaths").innerHTML = deaths;
+}
+        }
+//call send
+world.send();
+
+
+
 
 //For states table
 const tBoddy = document.getElementById("tableBody")

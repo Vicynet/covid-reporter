@@ -57,7 +57,7 @@ const assets = [
   "/images/Call.svg",
   "/images/calls.svg",
   "/images/Sms.svg",
-  "/images/Sms.svg",
+  "/images/world-map.svg",
 ]
 
 self.addEventListener("install", installEvent => {

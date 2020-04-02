@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Get up-to-date update about covid19 in Nigeria.">
     <meta name="description" content="Get up-to-date update about covid19 in Lagos, Abuja, Oyo, Ogun, Osun and others">
-    <meta name="keyword" content="corona virus, covid19, covid19 confirmed cases, cases in Nigeria, covid19 updates, covid19 in Nigeria">
+    <meta name="keyword" content="corona virus, covid19, covid-19, covid-19 virus, covid19 virus, covid19 confirmed cases, cases in Nigeria, covid19 updates, covid19 in Nigeria">
 
     <title>COVID-19 REPORTER</title>
     <link rel="icon" type="image/ico" href="images/sc-icon.ico">
@@ -42,7 +42,7 @@
                 <a class="nav-link" href="#cases">Cases</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#response">Response</a>
+                <a class="nav-link" href="#worldmap">Response</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#psd">Covid</a>
@@ -97,8 +97,8 @@
     </div>
     <!-- Nigeria Map Ends -->
     <!-- Dashboard Starts -->
-    <div class="container-fluid" style="margin: 1em auto;">
-      <div class="row text-center" style="padding: 1em;">
+    <div class="container-fluid map" style="margin: 1em auto;">
+      <div class="row text-center" style="padding: 0.5em;">
         <div class="col-6 col-lg-6">
           <div class="panel">DEATHS <p style="color: #FB5757;" id="death"></p><p><img src="images/death.svg" alt=""></p></div>
         </div>
@@ -116,10 +116,15 @@
     <!-- Dashboard End -->
     <!-- </div> -->
     <!-- State Case Table Starts -->
+    <div class="container-fluid">
+      <div class="row">
+        <h2 style="text-align: center; margin: auto; padding: 0em; padding-bottom: 0.5em;">Cases By States</h2>
+      </div>
+    </div>
+
     <div class="container-fluid" id="cases">
-      <div class="row" style="padding-bottom: 5em;">
+      <div class="row" style="padding-bottom: 2em;">
           <div class="col-md-12" id="afterSlideRow">
-              <h2 id="afterSlideH2" class="text-center">Cases by States</h2>
                 <table class="table table-striped table-dark table-hover text-left pt-3" style="margin: 0px;">
                   <thead>
                       <tr>
@@ -137,13 +142,25 @@
   <!-- State Case Table Ends -->
 
   <!-- World Map Tracking  Starts-->
-  <div class="container-fluid" id="response">
-    <div class="row" style="padding-bottom: 5em;">
-        <div class="col-md-12 text-center">
-            <h2 id="afterSlideH2">Track Cases Around The World</h2>
-            <iframe src="https://gis.genasys.com/openlayers.html" height="550" width="100%" frameborder="0"></iframe>
-        </div>
+  <div class="container-fluid">
+    <div class="row">
+      <h2 style="text-align: center; margin: auto; padding: 0em; padding-bottom: 1em;">World Covid-19 Stats</h2>
     </div>
+  </div>
+
+  <div class="container-fluid map">
+      <div class="row text-center" style="padding-bottom: 5em;">
+            <div class="col-sm-6 col-lg-4">
+              <div class="panel">CONFIRMED CASES<p style="color: #FB5757;" id="totalCases"></p><p><img src="images/recover.svg" alt=""></p></div>
+            </div>
+              <div class="col-6 col-lg-4">
+                <div class="panel">DEATHS <p style="color: #FB5757;" id="totalDeaths"></p><p><img src="images/death.svg" alt=""></p></div>
+              </div>
+              <div class="col-6 col-lg-4">
+                <div class="panel">RECOVERED<p style="color: #FB5757;" id="totalRecovery"></p><p><img src="images/recover.svg" alt=""></p> </div>
+              </div>
+              
+      </div>
   </div>
 
   <!-- World Map Tracking Ends -->
