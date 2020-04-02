@@ -58,34 +58,34 @@ xhr.onload = function()
 // call send
 xhr.send();
 
-//Create the XHR Object
-let req = new XMLHttpRequest;
 
-//Call the open function, GET-type of request, url, true-asynchronous
-req.open('GET', 'https://covid19-update-api.herokuapp.com/api/v1/ncdc/cases/states', true)
-//call the onload 
-req.onload = function() 
-    {
-        //check if the status is 200(means everything is okay)
-        if (this.status === 200) 
-            {
-                  let data = JSON.parse(this.responseText).states;
-                  var x = ""
-                  var y = ""
 
-                for (i in data) {
-                    if (data != 0) {
-                        x += data[i].name + "<br>";
-                        y += data[i].cases + "<br>";
-                    }
-                 
-                  }
-                
-                document.getElementById("states").innerHTML = x;
-                document.getElementById("state_cases").innerHTML = y;
-    }
+//For states table
+const tBoddy = document.getElementById("tableBody")
+        fetch('https://covid-19-countries.herokuapp.com/countries/nigeria').then(function(response) {
+            return response.json();
+        }).then(function(data) {
+            let cases_list = data[0].states
+                // console.log(cases_list)
+            let tr = ""
+            for (i in cases_list) {
+                let states = cases_list[i].name;
+                let cases = cases_list[i].cases;
+                data1 = {
+                    'states': states,
+                    'cases': cases
+                }
+                const _tr = `
+                <tr>
+                   
+                <td>${data1.states}</td>
+                <td>${data1.cases}</td>
+                </tr>
+                `
+                tr += _tr
+
             }
-//call send
-req.send();
-//Common Types of HTTP Statuses
-// 200: OK
+            tBoddy.innerHTML = tr
+        }).catch(function(err) {
+            console.warn('Something went wrong.', err);
+        });
