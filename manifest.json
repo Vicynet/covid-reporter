@@ -1,7 +1,7 @@
 {
   "name": "Covid-19 Reporter",
   "short_name": "Covid-19 Reporter",
-  "description": "Covid-19 Reports For Nigeria",
+  "description": "Covid-19 Reports For Nigeria With Covid Bot",
   "start_url": "index.html",
   "display": "standalone",
   "background_color": "#fdfdfd",
