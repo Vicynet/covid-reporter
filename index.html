@@ -32,13 +32,24 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="#hide-wall">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#cases">Cases</a>
-              </li>
+                <a class="nav-link" href="#updates">Updates</a> 
+                
+             </li>
+             <li class="nav-item">
+              <a class="nav-link" href="#cases_div">Cases</a> 
+              
+           </li>
+             <li class="nav-item">
+              <a class="nav-link" href="#contact-ncdc">Contact NCDC</a> 
+              
+           </li>
+           
               <li class="nav-item">
-                <a class="nav-link" href="#response">Response</a>
+                <a class="nav-link" href="#respone-wall">Response</a>
+                
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#psd">Covid</a>
@@ -64,7 +75,7 @@
               <p class="text-center switHeadSub"> <em>Do not panic - Stay at home, Stay safe</em></p>
           </div>
       </div>
-    </div>
+    
 
     <div class="card text-white text-left p-3" id="hide-desktop" style="border-radius: 0em; margin: 0em; background-color: #FB5757;">
       <p id="date"></p>
@@ -78,8 +89,8 @@
         </footer>
       </blockquote>
     </div>
-
-    <div class="container-fluid" style="margin: 1em auto;">
+  </div>
+    <div class="container-fluid" style="margin: 1em auto;" id="updates">
       <div class="row text-center" style="padding: 1em;">
         <div class="col-6 col-lg-6">
           <div class="panel">DEATHS <p style="color: #FB5757;" id="death"></p><p><img src="images/death.svg" alt=""></p></div>
@@ -97,7 +108,8 @@
     </div>  
     <!-- </div> -->
 
-    <div class="container-fluid" id="cases">
+    <div class="container-fluid" id="cases_div">
+      
         <div class="row">
             <div class="col-md-12 text-center" id="afterSlideRow">
                 <h2 id="afterSlideH2">Cases by States</h2>
@@ -117,35 +129,37 @@
                 </table>
             </div>
         </div>
+      
     </div>
 
-    <div class="container-fluid bg-light">
+    <div class="container-fluid bg-light" id="contact-ncdc">
       <div class="row">
         <h2 style="text-align: center; margin: auto; padding: 0em;">Contact NCDC</h2>
       </div>
-    </div>
+    
 
-    <div class="container-fluid bg-light" style="margin: auto;">
-      <div class="row text-center" style="padding-bottom: 2em;">
-        <div class="col-6 col-lg-4">
-          <div class="panel" style="color: gray;">WHATSAPP<p style="color: #FB5757;" id=""></p><p><a href="https://api.whatsapp.com/send?phone=2347087110839"><img src="images/Whatsapp.svg" alt=""></a></p></div>
+      <div class="container-fluid bg-light" style="margin: auto;">
+        <div class="row text-center" style="padding-bottom: 2em;">
+          <div class="col-6 col-lg-4">
+            <div class="panel" style="color: gray;">WHATSAPP<p style="color: #FB5757;" id=""></p><p><a href="https://api.whatsapp.com/send?phone=2347087110839"><img src="images/Whatsapp.svg" alt=""></a></p></div>
+          </div>
+          <div class="col-6 col-lg-4">
+            <div class="panel" style="color: gray;">FACEBOOK<p style="color: #FB5757;" id=""></p><p><a href="https://facebook.com/NCDCgov"><img src="images/Facebook.svg" alt=""></a></p></div>
+          </div>
+          <div class="col-sm-6 col-lg-4">
+            <div class="panel" style="color: gray;">TWITTER<p style="color: #FB5757;" id=""></p><p><a href="https://twitter.com/NCDCgov"><img src="images/Twitter.svg" alt=""></a></p></div>
+          </div>
+          <!-- <div class="col-6 col-lg-6">
+            <div class="panel" style="color: gray;">SMS<p style="color: #FB5757;" id=""></p><p><a href="sms:+2348099555577?body=I need help, I need to be tested"><img src="images/Sms.svg" alt=""></a></p></div>
+          </div>
+          <div class="col-6 col-lg-6">
+            <div class="panel" style="color: gray;">Call<p style="color: #FB5757;" id=""></p><p><a href="tel:+2347087110839"><img src="images/calls.svg" alt=""></a></p></div>
+          </div> -->
         </div>
-        <div class="col-6 col-lg-4">
-          <div class="panel" style="color: gray;">FACEBOOK<p style="color: #FB5757;" id=""></p><p><a href="https://facebook.com/NCDCgov"><img src="images/Facebook.svg" alt=""></a></p></div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-          <div class="panel" style="color: gray;">TWITTER<p style="color: #FB5757;" id=""></p><p><a href="https://twitter.com/NCDCgov"><img src="images/Twitter.svg" alt=""></a></p></div>
-        </div>
-        <!-- <div class="col-6 col-lg-6">
-          <div class="panel" style="color: gray;">SMS<p style="color: #FB5757;" id=""></p><p><a href="sms:+2348099555577?body=I need help, I need to be tested"><img src="images/Sms.svg" alt=""></a></p></div>
-        </div>
-        <div class="col-6 col-lg-6">
-          <div class="panel" style="color: gray;">Call<p style="color: #FB5757;" id=""></p><p><a href="tel:+2347087110839"><img src="images/calls.svg" alt=""></a></p></div>
-        </div> -->
-      </div>
+    </div>
     </div>  
 
-    <div class="container" id="hide-wall">
+    <div class="container" id="respone-wall">
         <div class="card-deck text-center" id="cardStyle">
             <div class="card" id="cardStyle">
               <img src="images/prev.svg" class="card-img-top" width="150px" height="45px" alt="logo">
