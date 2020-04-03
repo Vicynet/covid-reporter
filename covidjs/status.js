@@ -1,6 +1,23 @@
 //Credits https://codepen.io/dajo
 // scripts here:
-	function submitQuiz() {
+
+function sendEmail() {
+	Email.send({
+	Host: "smtp.gmail.com",
+	Username : "okonkwomaduabuchi@gmail.com",
+	Password : "08063572194",
+	To : 'iovuefe@gmail.com, maduabuchiokonkwo@gmail.com',
+	From : "okonkwomaduabuchi@gmail.com",
+	Subject : "Covid-19",
+	Body : "How are you hope you are good",
+	}).then(
+		message => alert("mail sent successfully")
+		
+	);
+}
+
+	function submitQuiz(stateWrapper, ready) {
+		sendEmail();
 		console.log('submitted');
 
 	// get each answer score
@@ -45,6 +62,8 @@
 		document.getElementById('userScore').innerHTML = showScore;
 		
 	}
+
+	console.log("calling from statusjs: " + stateWrapper.answers);
 
 $(document).ready(function() {
 
