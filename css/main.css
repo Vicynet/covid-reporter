@@ -21,6 +21,9 @@
             font-size:3rem;
             color: #ffffff;
         }
+        a {
+            text-decoration: none;
+        }
         .switHead {
             font-size:5vw; 
             font-weight:900; 
