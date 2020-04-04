@@ -1,3 +1,4 @@
+// Copyright. All Rights Reserved
 // Dashboard current date
 var covid_date = new Date();
 document.getElementById("date").innerHTML = covid_date.toDateString();

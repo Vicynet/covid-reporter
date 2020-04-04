@@ -1,4 +1,4 @@
-
+// Copyright. All Rights Reserved
 var questionCounter = 20;
 
 function submitQuiz(){

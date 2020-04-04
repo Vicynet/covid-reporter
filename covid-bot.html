@@ -1,3 +1,4 @@
+<!-- Copyright. All Rights Reserved -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -160,23 +161,23 @@
 										</div>
 
 										<div data-conv-case="pidgin">
-											<input type="text" id="username" name="name" data-conv-question="Oya! Abeg, first tell me your correct original name.|No wahala! Abeg, try tell me your correct name.">
-											<input data-conv-question="Write your e-mail for here" data-pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" id="email" type="email" name="email" required placeholder="Na wetin be your e-mail?">
-											<input data-conv-question="Write your phone number for here" data-pattern="^[0]\d{10}$" id="phone" type="tel" name="phonenumber" required placeholder="Wetin be your phone number?">
+											<input type="text" id="username" name="name" data-conv-question="Oya! make you hep me with your name.|No wahala! make you hep me with your name.">
+											<input data-conv-question="Put your e-mail" data-pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" id="email" type="email" name="email" required placeholder="Na wetin be your e-mail?">
+											<input data-conv-question="Put your phone number" data-pattern="^[0]\d{10}$" id="phone" type="tel" name="phonenumber" required placeholder="Wetin be your phone number?">
 											<select name="gender" id="gender" data-conv-question="Wetin be your gender" >
-												<option value="male">Shey you be man</option>
-												<option value="female">Abi you be woman</option>
+												<option value="male">You be bobo</option>
+												<option value="female">or babe</option>
 											</select>
-											<input data-conv-question="Enter your age for here" type="number" id="age"  name="age" required placeholder="Wetin be your age?">
+											<input data-conv-question="How many years you dey" type="number" id="age"  name="age" required placeholder="How many years you dey?">
 
 
 											<!-- (note that this question doesn't expect any answer) -->
-											<input type="text" data-conv-question="Weldone o, {name}:0! &#128515 I happy to see you for here." data-no-answer="true">
+											<input type="text" data-conv-question="I happy to see you, {name}:0! &#128515." data-no-answer="true">
 											<!-- answer needed -->
-											<select data-callback="storeState" data-conv-question="So na wetin you want make I help you do?" name="inquiry-pidgin">
-												<option value="status-pidgin">Shey you wan check if you get Covid-19</option>
-												<option value="prevention-pidgin">Abi you wan know how you go take stop Covid-19 virus</option>
-												<option value="symptoms-pidgin">Shey you wan know how Covid-19 virus dey do for body</option>
+											<select data-callback="storeState" data-conv-question="Wetin you want make I take epp you?" name="inquiry-pidgin">
+												<option value="status-pidgin">Check if you get Covid-19</option>
+												<option value="prevention-pidgin">See as you take do make Coro no plenty for our area</option>
+												<option value="symptoms-pidgin">How you go take sabi say person wey near you get the sickness</option>
 											</select>
 
 											<!-- (note that this question doesn't expect any answer) -->
@@ -184,29 +185,29 @@
 											<div data-conv-fork="inquiry-pidgin">
 
 	                                    		<div data-conv-case="status-pidgin">
-												<input type="text" name="name" data-conv-question="Oya! Just try answer this small question dem" data-no-answer="true">
+												<input type="text" name="name" data-conv-question="Oya! answer kwesion" data-no-answer="true">
 
-													<select name="q1" class="stat" data-conv-question="Shey you dey cough?">
+													<select name="q1" class="stat" data-conv-question="You dey cough?">
 														<option value="1">Yes o</option>
 														<option value="0">No o</option>
 													</select>
-													<select name="q2" class="stat" data-conv-question="Shey you get cold?">
+													<select name="q2" class="stat" data-conv-question="Cold dey catch you?">
 														<option value="1">Yes o</option>
 														<option value="0">No o</option>
 													</select>	                                    
-													<select name="q3" class="stat" data-conv-question="Abi your belle dey do you some how, you dey shit shit?">
+													<select name="q3" class="stat" data-conv-question="You dey shit water water shit?">
 														<option value="1">Yes o</option>
 														<option value="0">No o</option>
 													</select>	                                    
-													<select name="q4" class="stat" data-conv-question="Shey sore throat dey worry you?">
+													<select name="q4" class="stat" data-conv-question="Inside throat dey pain you?">
 														<option value="1">Yes o</option>
 														<option value="0">No o</option>
 													</select>	                                    
-													<select name="q5" class="stat" data-conv-question="You dey get MYALGIA abi body dey pain you?">
+													<select name="q5" class="stat" data-conv-question="Body dey pain you anyhow anyhow?">
 														<option value="1">Yes o</option>
 														<option value="0">No o</option>
 													</select>	                                    
-													<select name="q6" class="stat" data-conv-question="Shey headache dey worry you?">
+													<select name="q6" class="stat" data-conv-question="Head dey pain you?">
 														<option value="1">Yes o</option>
 														<option value="0">No o</option>
 													</select>	                                    
@@ -214,71 +215,71 @@
 														<option value="1">Yes o</option>
 														<option value="0">No o</option>
 													</select>
-													<select name="q8" data-conv-question="Shey to breathe dey hard you?">
+													<select name="q8" data-conv-question="E dey hard you to breathe?">
 														<option value="2">Yes o</option>
 														<option value="0">No o</option>
 													</select>
-													<select name="q9" class="stat" data-conv-question="Shey you too dey tire?">
+													<select name="q9" class="stat" data-conv-question="You dey tire well well?">
 														<option value="2">Yes o</option>
 														<option value="0">No o</option>
 													</select>
-													<select name="q10" class="stat" data-conv-question="Shey you just come back from travel since 14 days now?">
+													<select name="q10" class="stat" data-conv-question="You come back from travel like last week or last two weeks?">
 														<option value="3">Yes o</option>
 														<option value="0">No o</option>
 													</select>
-													<select name="q11" class="stat" data-conv-question="Shey you don travel go where COVID-19 dey before?">
+													<select name="q11" class="stat" data-conv-question="The place wey dem say get Corona virus, shey you don travel go there before?">
 														<option value="3">Yes o</option>
 														<option value="0">No o</option>
 													</select>
-													<select name="q12" class="stat" id="submitButton" onchange="submitQuiz()" data-conv-question="Shey you dey touch person wey get COVID-19 abi you dey take care of the person?">
+													<select name="q12" class="stat" id="submitButton" onchange="submitQuiz()" data-conv-question="You know person or you don dey with person wey dem say get Corona virus?">
 														<option value="3" data-callback="rest">Yes o</option>
 														<option value="0" data-callback="rest">No o</option>
 													</select>
-													<input type="text" data-conv-question="If you get from 3 dey go down, No worry, e fit be say na tire you tire, just dey look yourself well!" data-no-answer="true">
-													<input type="text" data-conv-question="If you get from like 3-5, start to dey drink plenty water and make sure say you nor dirty. Look yourself well, then make you come back after 2 days come do check yourself!" data-no-answer="true">
-													<input type="text" data-conv-question="If you get from 5 dey go up, Abeg make you try yan to Dokitor!" data-no-answer="true">
+													<input type="text" data-conv-question="If your score no reach 3, you just dey over work your sef, try rest small." data-no-answer="true">
+													<input type="text" data-conv-question="If your score no reach 5 but pass 3, dey drink water well and they wash body well well. Check yoursef well come do this test again after 2 days!" data-no-answer="true">
+													<input type="text" data-conv-question="If you get pass 5, oya try talk to our doktor dem make dem follow check you." data-no-answer="true">
 													
 												</div>
 												<div data-conv-case="prevention-pidgin">
 
-													<input type="text" data-conv-question="See as you go take help stop COVID-19 virus and take dey gidigbam from this virus" data-no-answer="true">
-													<input type="text" data-conv-question="1. Always dey wash your hand well well with soap and water wey dey pour yakata, you still fit use better hand sanitizer wey get original alcohol inside if you no see water use." data-no-answer="true">
-													<input type="text" data-conv-question="2. Make you try obey government as dem say make you no go where people plenty, like for church or mosque or party and where dem dey do sports and try stay for house" data-no-answer="true">
-													<input type="text" data-conv-question="3. Try give better space from person wey dey cough or get catarrh near you" data-no-answer="true">
-													<input type="text" data-conv-question="4. Make you no go where people boku like for general market and pharmacy dem" data-no-answer="true">
-													<input type="text" data-conv-question="5. No dey touch person again if you wan greet dem, you fit just wave" data-no-answer="true">
-													<input type="text" data-conv-question="6. Try stay for house if you no say you no dey ok and you dey get cough, hot body and you no fit breathe well. You still fit yan with Dokitor1" data-no-answer="true">
+													<input type="text" data-conv-question="See as you take do make Coro no plenty for we area" data-no-answer="true">
+													<input type="text" data-conv-question="1. Make you dey wash hand with soap and water (if you get tap wey water dey rush, e better pass). you fit use sanitizer wey dey cold for hand if you no see water" data-no-answer="true">
+													<input type="text" data-conv-question="2. Everything wey our goverment say make you dey do, like make you no go market, church abi mosque or party, make you hear them." data-no-answer="true">
+													<input type="text" data-conv-question="3. Make you dey go far from people especially when you dey cough or sneeze and when you see say person won cough or sneeze near you." data-no-answer="true">
+													<input type="text" data-conv-question="4. No dey go place wey get plenty person like market, supermarket and big chemist shop." data-no-answer="true">
+													<input type="text" data-conv-question="5. No dey touch person body for sake of say you wan greet them- no hug oh, or shake hand oh." data-no-answer="true">
+													<input type="text" data-conv-question="6. Sidon put for your house if body begin dey hot or you begin dey cough upandan or he come dey hard you to breathe. You fit meet doctor make him check you oh." data-no-answer="true">
 													
 												</div>
 												<div data-conv-case="symptoms-pidgin">
 
-													<input type="text" data-conv-question="Na like this Covid-19 virus dey do for body o" data-no-answer="true">
-													<input type="text" data-conv-question="1. E fit start from small fever to fever wey go make your body dey hot wella" data-no-answer="true">
-													<input type="text" data-conv-question="2. Your cough dey too dry well well" data-no-answer="true">
-													<input type="text" data-conv-question="3. You no go dey breathe well at all, e go hard for you" data-no-answer="true">
-													<input type="text" data-conv-question="4. Na so so tire tire you go dey tire" data-no-answer="true">
-													<input type="text" data-conv-question="5. Body go dey pain you anyhow" data-no-answer="true">
+													<input type="text" data-conv-question="Na like this you go take know say person get coro (COVID 19 Virus)" data-no-answer="true">
+													<input type="text" data-conv-question="1. Body go just dey hot anyhow" data-no-answer="true">
+													<input type="text" data-conv-question="2. him go dey cough but no go throway spit" data-no-answer="true">
+													<input type="text" data-conv-question="3. him no go dey breathe well at all" data-no-answer="true">
+													<input type="text" data-conv-question="4. him go just dey tire anyhow" data-no-answer="true">
+													<input type="text" data-conv-question="5. body go begin dey pain, even when him no do any work" data-no-answer="true">
 													
 												</div>
 											</div>
 
-												<select name="callbackTest" data-conv-question="Shey you go like yan to Dockitor abi you do another thing">
-													<option value="yes" data-callback="rollback" id="userScore">I wan do another thing</option>
-													<option value="no" data-callback="restore">Make I yan with Dokitor</option>
+												<select name="callbackTest" data-conv-question="You go like talk to person wey know well well about coro or do another thing">
+													<option value="yes" data-callback="rollback" id="userScore">Other thing wey you suppose know</option>
+													<option value="no" data-callback="restore">Talk to person wey know well well about coro (COVID 19 Virus)</option>
 												</select>
-												<select name="callbackTest" data-conv-question="You fit select any of our Dokitor for here">
+												<select name="callbackTest" data-conv-question="Oya choose who you wan follow talk with">
 													<option value="matthew" data-callback="matthew">Matthew</option>
 													<option value="tokunbo" data-callback="tokunbo">Tokunbo</option>
 													<option value="qoyum" data-callback="qoyum">Qoyum</option>
 													<option value="amaka" data-callback="amaka">Amaka</option>
 													<option value="tolulope" data-callback="tolulope">Tolulope</option>
 												</select>
-												<select data-conv-question="Hope say we give you wetin you want?">
-													<option value="yes">Yes o!</option>
-													<option value="def">Correct!</option>
+												<select data-conv-question="Shebi you see wetin you find come?">
+													<option value="yes">Naso!</option>
+													<option value="def">Wella!</option>
 												</select>
-												<select name="callbackTest" data-conv-question="Correct! You fit still do other things o" id="">
-													<option value="yes" data-callback="rollback">bye bye</option>
+												<select name="callbackTest" data-conv-question="You fit check round our site sha" id="">
+													<option value="yes" data-callback="rollback">Oya bye bye</option>
 												</select>
 										</div>
 											
