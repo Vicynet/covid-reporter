@@ -60,9 +60,9 @@ world.onload = function()
              
               }
             
-            document.getElementById("totalCases").innerHTML = cases;
-            document.getElementById("totalRecovery").innerHTML = recovery;
-            document.getElementById("totalDeaths").innerHTML = deaths;
+            document.getElementById("totalCases").innerHTML = cases.toLocaleString();
+            document.getElementById("totalRecovery").innerHTML = recovery.toLocaleString();
+            document.getElementById("totalDeaths").innerHTML = deaths.toLocaleString();
 }
         }
 //call send
