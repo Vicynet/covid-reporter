@@ -43,16 +43,21 @@
 											<!-- (note that this question doesn't expect any answer) -->
 											<input type="text" data-conv-question="Hello, {name}:0! &#128515 It's a pleasure to meet you." data-no-answer="true">
 											<!-- answer needed -->
-											<select name="inquiry" data-callback="storeState" data-conv-question="How would you want to be assisted?">
+											<!-- <select name="inquiry" data-callback="storeState" data-conv-question="How would you want to be assisted?">
 												<option value="status">Check Covid-19 status</option>
 												<option value="prevention">How to prevent Covid-19 virus spread</option>
 												<option value="symptoms">Symptoms relating to Covid-19 virus</option>
+											</select> -->
+											<select name="inquiry" data-conv-question="Kindly click to check status">
+												<option value="status">Check Covid-19 status</option>
+												<!-- <option value="prevention">How to prevent Covid-19 virus spread</option>
+												<option value="symptoms">Symptoms relating to Covid-19 virus</option> -->
 											</select>
 
 											<!-- (note that this question doesn't expect any answer) -->
 											<!-- choose cases -->
-											<div data-conv-fork="inquiry">
-	                                    		<div data-conv-case="status">
+											<!-- <div data-conv-fork="inquiry">
+	                                    		<div data-conv-case="status"> -->
 													<input type="text" name="name" data-conv-question="Alright! Kindly answer the following questions" data-no-answer="true">
 
 													<select name="q1" class="stat" data-conv-question="Do you have cough?">
@@ -107,10 +112,75 @@
 													<input type="text" data-conv-question="If your test score is between 3-5, Hydrate properly and keep proper personal hygiene. Observe and re-evaluate after 2 days!" data-no-answer="true">
 													<input type="text" data-conv-question="If your test score above 5, Seek consultation with a Doctor!" data-no-answer="true">
 													
+												<!-- </div> -->
+												<select name="callbackTest" data-callback="storeState" data-conv-question="Would you like to talk to a health expert now or get other info">
+													<!-- <option value="yes" data-callback="restore">Other Info</option> -->
+													<option value="yes" data-callback="restore">Talk to a health expert</option>
+													<option value="prevention" data-callback="restore">How to prevent Covid-19 virus spread</option>
+													<option value="symptoms" data-callback="restore">Symptoms relating to Covid-19 virus</option>
+												</select>
+
+												<div data-conv-fork="inquiry">
+	                                    			<div data-conv-case="yes">
+														<select data-conv-question="You can select any of our available health agent">
+															<option value="matthew" data-callback="matthew">Matthew</option>
+															<option value="tokunbo" data-callback="tokunbo">Tokunbo</option>
+															<option value="qoyum" data-callback="qoyum">Qoyum</option>
+															<option value="amaka" data-callback="amaka">Amaka</option>
+															<option value="tolulope" data-callback="tolulope">Tolulope</option>
+														</select>
+													</div>
+													<div data-conv-case="prevention">
+												
+														<input type="text" data-conv-question="Here are the following ways you can help prevent the spread of COVID-19 virus" data-no-answer="true">
+														<input type="text" data-conv-question="1. Regularly and thoroughly wash hands with soap under running water or use alcohol-based sanitizer if water is not available" data-no-answer="true">
+														<input type="text" data-conv-question="2. Obey national and state directives requesting the cancellation and avoidance of large gatherings, including places of worship, social and sporting events and stay at home" data-no-answer="true">
+														<input type="text" data-conv-question="3. Maintain at least 2 metres distance between yourself and anyone who is coughing or sneezing around you" data-no-answer="true">
+														<input type="text" data-conv-question="4. Avoid crowded spaces such as open markets, crowded supermarkets and pharmacies" data-no-answer="true">
+														<input type="text" data-conv-question="5. Use of no-touch greetings" data-no-answer="true">
+														<input type="text" data-conv-question="6. Stay home if you feel unwell with symptoms like fever, cough and difficulty in breathing, Seek consultation with a Doctor!" data-no-answer="true">
+														
+													</div>
+														
+													<div data-conv-case="symptoms">
+														<input type="text" data-conv-question="The following are symptoms one may feel if they have COVID-19 virus" data-no-answer="true">
+														<input type="text" data-conv-question="1. Severity of COVID-19 symptoms can range from very mild to severe fever" data-no-answer="true">
+														<input type="text" data-conv-question="2. Persistent dry cough" data-no-answer="true">
+														<input type="text" data-conv-question="3. Short breathe or difficulty in breathing" data-no-answer="true">
+														<input type="text" data-conv-question="4. Fatigue or tiredness" data-no-answer="true">
+														<input type="text" data-conv-question="5. Persistent body aches" data-no-answer="true">
+														
+													</div>
 												</div>
+													<!-- <div data-conv-case="no">
+														<select data-conv-question="You can select any of our available health agent">
+															<option value="matthew" data-callback="matthew">Matthew</option>
+															<option value="tokunbo" data-callback="tokunbo">Tokunbo</option>
+															<option value="qoyum" data-callback="qoyum">Qoyum</option>
+															<option value="amaka" data-callback="amaka">Amaka</option>
+															<option value="tolulope" data-callback="tolulope">Tolulope</option>
+														</select>
+													</div> -->
+												<!-- </div> -->
+												<select data-conv-question="Hope you got the help you desired?">
+													<option value="yes">Yes!</option>
+													<option value="def">Definitely!</option>
+												</select>
+												<select name="callbackTest" data-conv-question="Awesome! You can still explore other options or say goodbye" id="">
+													<option value="yes" data-callback="rollback">Explore</option>
+													<option value="">Goodbye</option>
+												</select>
+
+												<!-- <select data-conv-question="You can select any of our available health agent">
+													<option value="matthew" data-callback="matthew">Matthew</option>
+													<option value="tokunbo" data-callback="tokunbo">Tokunbo</option>
+													<option value="qoyum" data-callback="qoyum">Qoyum</option>
+													<option value="amaka" data-callback="amaka">Amaka</option>
+													<option value="tolulope" data-callback="tolulope">Tolulope</option>
+												</select> -->
 												
 
-												<div data-conv-case="prevention">
+												<!-- <div data-conv-case="prevention">
 													
 													<input type="text" data-conv-question="Here are the following ways you can help prevent the spread of COVID-19 virus" data-no-answer="true">
 													<input type="text" data-conv-question="1. Regularly and thoroughly wash hands with soap under running water or use alcohol-based sanitizer if water is not available" data-no-answer="true">
@@ -130,31 +200,31 @@
 													<input type="text" data-conv-question="4. Fatigue or tiredness" data-no-answer="true">
 													<input type="text" data-conv-question="5. Persistent body aches" data-no-answer="true">
 													
-												</div>
+												</div> -->
 												
 											</div>
 
-												<select name="callbackTest" data-conv-question="Would you like to talk to a health expert now or get other info">
+												<!-- <select name="callbackTest" data-conv-question="Would you like to talk to a health expert now or get other info">
 													<option value="yes" data-callback="rollback">Other Info</option>
 													<option value="no" data-callback="restore" onchange="saveInfo()">Talk to a health expert</option>
-												</select>
+												</select> -->
 
-												<select data-conv-question="You can select any of our available health agent">
+												<!-- <select data-conv-question="You can select any of our available health agent">
 													<option value="matthew" data-callback="matthew">Matthew</option>
 													<option value="tokunbo" data-callback="tokunbo">Tokunbo</option>
 													<option value="qoyum" data-callback="qoyum">Qoyum</option>
 													<option value="amaka" data-callback="amaka">Amaka</option>
 													<option value="tolulope" data-callback="tolulope">Tolulope</option>
-												</select>
-												<select data-conv-question="Hope you got the help you desired?">
+												</select> -->
+												<!-- <select data-conv-question="Hope you got the help you desired?">
 													<option value="yes">Yes!</option>
 													<option value="def">Definitely!</option>
 												</select>
 												<select name="callbackTest" data-conv-question="Awesome! Now you can explore other options or say goodbye" id="">
 													<option value="yes" data-callback="rollback">Explore</option>
 													<option value="">Goodbye</option>
-												</select>
-										</div>
+												</select> -->
+										<!-- </div> -->
 
 										<div data-conv-case="pidgin">
 											<input type="text" id="username" name="name" data-conv-question="Oya! Abeg, first tell me your correct original name.|No wahala! Abeg, try tell me your correct name.">
