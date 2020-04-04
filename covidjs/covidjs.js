@@ -15,7 +15,7 @@ dash.onload = function()
             
             for (i in data) {
 
-                if (i = 150) {
+                if (i = 151) {
                   document.getElementById("cases").innerHTML = data[i].TotalConfirmed
                   document.getElementById("death").innerHTML = data[i].TotalDeaths
                   document.getElementById("recover").innerHTML = data[i].TotalRecovered

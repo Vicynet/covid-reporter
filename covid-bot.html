@@ -8,7 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="dist/jquery.convform.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/covidbot.css">
-	<script src="https://smtpjs.com/v3/smtp.js"></script>
+	<!-- <script src="https://smtpjs.com/v3/smtp.js"></script> -->
 </head>
 <body>
 	<section id="demo">
@@ -37,27 +37,25 @@
 											<input type="text" name="name" data-conv-question="Alright! First, tell me your full name, please.|Okay! Please, tell me your name first." id="fullname">
 											<input data-conv-question="Type in your e-mail" data-pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" id="email" type="email" name="email" required placeholder="What's your e-mail?">
 											<input data-conv-question="Type in your phone number" data-pattern="^[0]\d{10}$" id="phone"  name="phonenumber" required placeholder="What's your phone number?">
-											<input data-conv-question="please input your gender"  id="gender" type="text" name="gender" required placeholder="What's your gender?">
+											<select name="gender" id="gender" data-conv-question="Please select your gender" >
+												<option value="male">Male</option>
+												<option value="female">Female</option>
+											</select>
 											<input data-conv-question="Type in your age" type="number" id="age"  name="age" required placeholder="What's your age?">
 											
 											<!-- (note that this question doesn't expect any answer) -->
 											<input type="text" data-conv-question="Hello, {name}:0! &#128515 It's a pleasure to meet you." data-no-answer="true">
 											<!-- answer needed -->
-											<!-- <select name="inquiry" data-callback="storeState" data-conv-question="How would you want to be assisted?">
+											<select name="inquiry" data-callback="storeState" data-conv-question="How would you want to be assisted?">
 												<option value="status">Check Covid-19 status</option>
 												<option value="prevention">How to prevent Covid-19 virus spread</option>
 												<option value="symptoms">Symptoms relating to Covid-19 virus</option>
-											</select> -->
-											<select name="inquiry" data-conv-question="Kindly click to check status">
-												<option value="status">Check Covid-19 status</option>
-												<!-- <option value="prevention">How to prevent Covid-19 virus spread</option>
-												<option value="symptoms">Symptoms relating to Covid-19 virus</option> -->
 											</select>
 
 											<!-- (note that this question doesn't expect any answer) -->
 											<!-- choose cases -->
-											<!-- <div data-conv-fork="inquiry">
-	                                    		<div data-conv-case="status"> -->
+											<div data-conv-fork="inquiry">
+	                                    		<div data-conv-case="status">
 													<input type="text" name="name" data-conv-question="Alright! Kindly answer the following questions" data-no-answer="true">
 
 													<select name="q1" class="stat" data-conv-question="Do you have cough?">
@@ -105,82 +103,17 @@
 														<option value="0">No</option>
 													</select>
 													<select name="q12" class="stat" id="submitButton" onchange="submitQuiz()" data-conv-question="Do you have direct contact or is taking care of a positive COVID-19 patient?">
-														<option value="3">Yes</option>
-														<option value="0" >No</option>
+														<option value="3" data-callback="rest">Yes</option>
+														<option value="0" data-callback="rest">No</option>
 													</select>
 													<input type="text" data-conv-question="If your test score is below 3, You may be stressed, but just keep observing!" data-no-answer="true">
 													<input type="text" data-conv-question="If your test score is between 3-5, Hydrate properly and keep proper personal hygiene. Observe and re-evaluate after 2 days!" data-no-answer="true">
 													<input type="text" data-conv-question="If your test score above 5, Seek consultation with a Doctor!" data-no-answer="true">
 													
-												<!-- </div> -->
-												<select name="callbackTest" data-callback="storeState" data-conv-question="Would you like to talk to a health expert now or get other info">
-													<!-- <option value="yes" data-callback="restore">Other Info</option> -->
-													<option value="yes" data-callback="restore">Talk to a health expert</option>
-													<option value="prevention" data-callback="restore">How to prevent Covid-19 virus spread</option>
-													<option value="symptoms" data-callback="restore">Symptoms relating to Covid-19 virus</option>
-												</select>
-
-												<div data-conv-fork="inquiry">
-	                                    			<div data-conv-case="yes">
-														<select data-conv-question="You can select any of our available health agent">
-															<option value="matthew" data-callback="matthew">Matthew</option>
-															<option value="tokunbo" data-callback="tokunbo">Tokunbo</option>
-															<option value="qoyum" data-callback="qoyum">Qoyum</option>
-															<option value="amaka" data-callback="amaka">Amaka</option>
-															<option value="tolulope" data-callback="tolulope">Tolulope</option>
-														</select>
-													</div>
-													<div data-conv-case="prevention">
-												
-														<input type="text" data-conv-question="Here are the following ways you can help prevent the spread of COVID-19 virus" data-no-answer="true">
-														<input type="text" data-conv-question="1. Regularly and thoroughly wash hands with soap under running water or use alcohol-based sanitizer if water is not available" data-no-answer="true">
-														<input type="text" data-conv-question="2. Obey national and state directives requesting the cancellation and avoidance of large gatherings, including places of worship, social and sporting events and stay at home" data-no-answer="true">
-														<input type="text" data-conv-question="3. Maintain at least 2 metres distance between yourself and anyone who is coughing or sneezing around you" data-no-answer="true">
-														<input type="text" data-conv-question="4. Avoid crowded spaces such as open markets, crowded supermarkets and pharmacies" data-no-answer="true">
-														<input type="text" data-conv-question="5. Use of no-touch greetings" data-no-answer="true">
-														<input type="text" data-conv-question="6. Stay home if you feel unwell with symptoms like fever, cough and difficulty in breathing, Seek consultation with a Doctor!" data-no-answer="true">
-														
-													</div>
-														
-													<div data-conv-case="symptoms">
-														<input type="text" data-conv-question="The following are symptoms one may feel if they have COVID-19 virus" data-no-answer="true">
-														<input type="text" data-conv-question="1. Severity of COVID-19 symptoms can range from very mild to severe fever" data-no-answer="true">
-														<input type="text" data-conv-question="2. Persistent dry cough" data-no-answer="true">
-														<input type="text" data-conv-question="3. Short breathe or difficulty in breathing" data-no-answer="true">
-														<input type="text" data-conv-question="4. Fatigue or tiredness" data-no-answer="true">
-														<input type="text" data-conv-question="5. Persistent body aches" data-no-answer="true">
-														
-													</div>
 												</div>
-													<!-- <div data-conv-case="no">
-														<select data-conv-question="You can select any of our available health agent">
-															<option value="matthew" data-callback="matthew">Matthew</option>
-															<option value="tokunbo" data-callback="tokunbo">Tokunbo</option>
-															<option value="qoyum" data-callback="qoyum">Qoyum</option>
-															<option value="amaka" data-callback="amaka">Amaka</option>
-															<option value="tolulope" data-callback="tolulope">Tolulope</option>
-														</select>
-													</div> -->
-												<!-- </div> -->
-												<select data-conv-question="Hope you got the help you desired?">
-													<option value="yes">Yes!</option>
-													<option value="def">Definitely!</option>
-												</select>
-												<select name="callbackTest" data-conv-question="Awesome! You can still explore other options or say goodbye" id="">
-													<option value="yes" data-callback="rollback">Explore</option>
-													<option value="">Goodbye</option>
-												</select>
-
-												<!-- <select data-conv-question="You can select any of our available health agent">
-													<option value="matthew" data-callback="matthew">Matthew</option>
-													<option value="tokunbo" data-callback="tokunbo">Tokunbo</option>
-													<option value="qoyum" data-callback="qoyum">Qoyum</option>
-													<option value="amaka" data-callback="amaka">Amaka</option>
-													<option value="tolulope" data-callback="tolulope">Tolulope</option>
-												</select> -->
 												
 
-												<!-- <div data-conv-case="prevention">
+												<div data-conv-case="prevention">
 													
 													<input type="text" data-conv-question="Here are the following ways you can help prevent the spread of COVID-19 virus" data-no-answer="true">
 													<input type="text" data-conv-question="1. Regularly and thoroughly wash hands with soap under running water or use alcohol-based sanitizer if water is not available" data-no-answer="true">
@@ -200,36 +133,42 @@
 													<input type="text" data-conv-question="4. Fatigue or tiredness" data-no-answer="true">
 													<input type="text" data-conv-question="5. Persistent body aches" data-no-answer="true">
 													
-												</div> -->
+												</div>
 												
 											</div>
 
-												<!-- <select name="callbackTest" data-conv-question="Would you like to talk to a health expert now or get other info">
+												<select name="callbackTest" data-conv-question="Would you like to talk to a health expert now or get other info">
 													<option value="yes" data-callback="rollback">Other Info</option>
-													<option value="no" data-callback="restore" onchange="saveInfo()">Talk to a health expert</option>
-												</select> -->
+													<option value="no" data-callback="restore">Talk to a health expert</option>
+												</select>
 
-												<!-- <select data-conv-question="You can select any of our available health agent">
+												<select data-conv-question="You can select any of our available health agent">
 													<option value="matthew" data-callback="matthew">Matthew</option>
 													<option value="tokunbo" data-callback="tokunbo">Tokunbo</option>
 													<option value="qoyum" data-callback="qoyum">Qoyum</option>
 													<option value="amaka" data-callback="amaka">Amaka</option>
 													<option value="tolulope" data-callback="tolulope">Tolulope</option>
-												</select> -->
-												<!-- <select data-conv-question="Hope you got the help you desired?">
+												</select>
+												<select data-conv-question="Hope you got the help you desired?">
 													<option value="yes">Yes!</option>
 													<option value="def">Definitely!</option>
 												</select>
-												<select name="callbackTest" data-conv-question="Awesome! Now you can explore other options or say goodbye" id="">
-													<option value="yes" data-callback="rollback">Explore</option>
-													<option value="">Goodbye</option>
-												</select> -->
-										<!-- </div> -->
+												<select name="callbackTest" data-conv-question="Awesome! You can still explore other options" id="">
+													<option value="yes" data-callback="rollback">Goodbye</option>
+													<!-- <option value="" >Goodbye</option> -->
+												</select>
+										</div>
 
 										<div data-conv-case="pidgin">
 											<input type="text" id="username" name="name" data-conv-question="Oya! Abeg, first tell me your correct original name.|No wahala! Abeg, try tell me your correct name.">
 											<input data-conv-question="Write your e-mail for here" data-pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" id="email" type="email" name="email" required placeholder="Na wetin be your e-mail?">
-											<input data-conv-question="Write your phone number for here" data-pattern="[0-9]{11}" id="phone" type="tel" name="phone" required placeholder="Wetin be your phone number?">
+											<input data-conv-question="Write your phone number for here" data-pattern="^[0]\d{10}$" id="phone" type="tel" name="phonenumber" required placeholder="Wetin be your phone number?">
+											<select name="gender" id="gender" data-conv-question="Wetin be your gender" >
+												<option value="male">Shey you be man</option>
+												<option value="female">Abi you be woman</option>
+											</select>
+											<input data-conv-question="Enter your age for here" type="number" id="age"  name="age" required placeholder="Wetin be your age?">
+
 
 											<!-- (note that this question doesn't expect any answer) -->
 											<input type="text" data-conv-question="Weldone o, {name}:0! &#128515 I happy to see you for here." data-no-answer="true">
@@ -292,8 +231,8 @@
 														<option value="0">No o</option>
 													</select>
 													<select name="q12" class="stat" id="submitButton" onchange="submitQuiz()" data-conv-question="Shey you dey touch person wey get COVID-19 abi you dey take care of the person?">
-														<option value="3">Yes o</option>
-														<option value="0" >No o</option>
+														<option value="3" data-callback="rest">Yes o</option>
+														<option value="0" data-callback="rest">No o</option>
 													</select>
 													<input type="text" data-conv-question="If you get from 3 dey go down, No worry, e fit be say na tire you tire, just dey look yourself well!" data-no-answer="true">
 													<input type="text" data-conv-question="If you get from like 3-5, start to dey drink plenty water and make sure say you nor dirty. Look yourself well, then make you come back after 2 days come do check yourself!" data-no-answer="true">
@@ -338,9 +277,8 @@
 													<option value="yes">Yes o!</option>
 													<option value="def">Correct!</option>
 												</select>
-												<select name="callbackTest" data-conv-question="Na so! Now you fit check other things abi you wan dey go" id="">
-													<option value="yes" data-callback="rollback">I go like check other things</option>
-													<option value="">Bye Bye</option>
+												<select name="callbackTest" data-conv-question="Correct! You fit still do other things o" id="">
+													<option value="yes" data-callback="rollback">bye bye</option>
 												</select>
 										</div>
 											
@@ -348,7 +286,12 @@
 											<input type="text" id="username" name="name" data-conv-question="Gaskiya! Da farko, gaya mani cikakken sunanka, don Allah.|
 											Lafiya! Don Allah, gaya mani sunanka da farko.">
 											<input data-conv-question="Rubuta a cikin imel" data-pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" id="email" type="email" name="email" required placeholder="Menene imel?">
-											<input data-conv-question="Rubuta a lambar wayarka" data-pattern="[0-9]{11}" id="phone" type="tel" name="phone" required placeholder="Menene lambar wayar ku?">
+											<input data-conv-question="Rubuta a lambar wayarka" data-pattern="^[0]\d{10}$" id="phone" type="tel" name="phonenumber" required placeholder="Menene lambar wayar ku?">
+											<select name="gender" id="gender" data-conv-question="Da fatan za a zabi jinsi" >
+												<option value="male">Namiji</option>
+												<option value="female">Mace</option>
+											</select>
+											<input data-conv-question="Rubuta a cikin shekarun ku" type="number" id="age"  name="age" required placeholder="Menene shekarunka?">
 
 											<!-- (note that this question doesn't expect any answer) -->
 											<input type="text" data-conv-question="Sannu, {name}:0! &#128515 Abun farin ciki ne in hadu da ku." data-no-answer="true">
@@ -410,8 +353,8 @@
 														<option value="0">A'a</option>
 													</select>
 													<select name="q12" class="stat" id="submitButton" onchange="submitQuiz()" data-conv-question="Shin kuna da takamaiman lamba ko kuna kula da kyakkyawan haƙuri na COVID-19?">
-														<option value="3">Haka ne</option>
-														<option value="0">A'a</option>
+														<option value="3" data-callback="rest">Haka ne</option>
+														<option value="0" data-callback="rest">A'a</option>
 													</select>
 													<input type="text" data-conv-question="
 													Idan gwajin ku ya kasance ƙasa da 3, Wataƙila ana iya damuwa, amma ku ci gaba da lura!" data-no-answer="true">
@@ -455,9 +398,8 @@
 												<option value="yes">Haka ne!</option>
 												<option value="def">Tabbas!</option>
 											</select>
-											<select name="callbackTest" data-conv-question="Abin ban tsoro! Yanzu zaku iya bincika sauran zaɓuɓɓuka ko ku faɗi ban kwana" id="">
-												<option value="yes" data-callback="rollback">Gano</option>
-												<option value="">Barka dai</option>
+											<select name="callbackTest" data-conv-question="Abin ban tsoro! Har yanzu kuna iya bincika sauran zaɓuɓɓuka" id="">
+												<option value="yes" data-callback="rollback">Barka dai</option>
 											</select>
 										</div>
 											
@@ -465,7 +407,12 @@
 										<div data-conv-case="igbo">
 											<input type="text" id="username" name="name" data-conv-question="Daalu! Buru ụzọ gwa m aha gị nke ọma, biko.|Ọ dị mma! Biko, buru ụzọ gwa m aha gị.">
 											<input data-conv-question="Pịnye n’ime e-mail gị" data-pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" id="email" type="email" name="email" required placeholder="Kedu ihe bụ email gị?">
-											<input data-conv-question="Pịnye na akara ekwentị gị" data-pattern="[0-9]{11}" id="phone" type="tel" name="phone" required placeholder="Kedu nọmba ekwentị gị?">
+											<input data-conv-question="Pịnye na akara ekwentị gị" data-pattern="^[0]\d{10}$" id="phone" type="tel" name="phonenumber" required placeholder="Kedu nọmba ekwentị gị?">
+											<select name="gender" id="gender" data-conv-question="Biko ibu nwoke ke i bu nwanyi" >
+												<option value="male">Nwoke</option>
+												<option value="female">Nwanyi</option>
+											</select>
+											<input data-conv-question="Pịnye n'afọ ndụ gị" type="number" id="age"  name="age" required placeholder="Kedu afọ gị?">
 
 											<!-- (note that this question doesn't expect any answer) -->
 											<input type="text" data-conv-question="Nnọọ, {name}:0! &#128515 Ọ bụ ihe obi ụtọ izute gị." data-no-answer="true">
@@ -527,8 +474,8 @@
 														<option value="0">Mba</option>
 													</select>
 													<select name="q12" class="stat" id="submitButton" onchange="submitQuiz()" data-conv-question="ị nwere kọntaktị ozugbo ma ọ bụ na-elekọta onye ọrịa COVID-19 dị mma?">
-														<option value="3">Ee</option>
-														<option value="0">Mba</option>
+														<option value="3" data-callback="rest">Ee</option>
+														<option value="0" data-callback="rest">Mba</option>
 
 													<input type="text" data-conv-question="Ọ bụrụ na akara ule gị dị n'okpuru 3, may nwere ike imesi ike, mana naanị na-elele!" data-no-answer="true">
 													<input type="text" data-conv-question="Ọ bụrụ na akara ule gị dị n'agbata 3-5, Hidekwa nke ọma ma debe ịdị ọcha onwe gị. Leruo ma tugharia mgbe ubochi abuo!" data-no-answer="true">
@@ -574,17 +521,20 @@
 												<option value="yes">Ee!</option>
 												<option value="def">Kpamkpam!</option>
 											</select>
-											<select name="callbackTest" data-conv-question="Egwu! Ugbu a ị nwere ike nyochaa nhọrọ ndị ọzọ ma ọ bụ kwuo nke ọma" id="">
-												<option value="yes" data-callback="rollback">Nyocha</option>
-												<option value="">Ka ọ dị</option>
+											<select name="callbackTest" data-conv-question="Egwu! Still ka nwere ike ịchọpụta nhọrọ ndị ọzọ" id="">
+												<option value="yes" data-callback="rollback">Ka ọ dị</option>
 											</select>
 										</div>
 											
 										<div data-conv-case="yoruba">
 											<input type="text" id="username" name="name" data-conv-question="Dara! Ni akọkọ, sọ fun orukọ rẹ ni kikun, jọwọ.|Dara! Jọwọ, sọ orukọ rẹ fun mi lakoko.">
 											<input data-conv-question="Tẹ ninu imeeli rẹ" data-pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" id="email" type="email" name="email" required placeholder="Kini imeeli rẹ?">
-											<input data-conv-question="Tẹ nọmba foonu rẹ" data-pattern="[0-9]{11}" id="phone" type="tel" name="phone" required placeholder="Kini nọmba foonu rẹ?">
-
+											<input data-conv-question="Tẹ nọmba foonu rẹ" data-pattern="^[0]\d{10}$" id="phone" type="tel" name="phonenumber" required placeholder="Kini nọmba foonu rẹ?">
+											<select name="gender" id="gender" data-conv-question="Jọwọ yan akọ tabi abo rẹ" >
+												<option value="male">Ọkunrin</option>
+												<option value="female">Obinrin</option>
+											</select>
+											<input data-conv-question="Tẹ ni ọjọ-ori rẹ" type="number" id="age"  name="age" required placeholder="Kini ọjọ-ori rẹ?">
 											<!-- (note that this question doesn't expect any answer) -->
 											<input type="text" data-conv-question="Pẹlẹ o, {name}:0! &#128515 O jẹ igbadun lati pade rẹ." data-no-answer="true">
 											<!-- answer needed -->
@@ -646,8 +596,8 @@
 														<option value="0">Rara</option>
 													</select>
 													<select name="q12" class="stat" id="submitButton" onchange="submitQuiz()" data-conv-question="Ṣe o ni olubasọrọ taara tabi o n tọju alaisan COVID-19 rere?">
-														<option value="3">Bẹẹni</option>
-														<option value="0">Rara</option>
+														<option value="3" data-callback="rest">Bẹẹni</option>
+														<option value="0" data-callback="rest">Rara</option>
 													</select>
 													<input type="text" data-conv-question="Ti Dimegilio idanwo rẹ ba wa ni isalẹ 3, O le ni wahala, ṣugbọn o kan ṣọra!" data-no-answer="true">
 													<input type="text" data-conv-question="Ti Dimegilio idanwo rẹ ba wa laarin 3-5, Hydrate daradara ki o tọju itọju ti ara ẹni ti o tọ. Ṣe akiyesi ati tun-ṣe ayẹwo lẹhin ọjọ 2!" data-no-answer="true">
@@ -693,9 +643,8 @@
 												<option value="yes">Bẹẹni!</option>
 												<option value="def">Ni pato!</option>
 											</select>
-											<select name="callbackTest" data-conv-question="Oniyi! Bayi o le ṣawari awọn aṣayan miiran tabi sọ o dabọ" id="">
-												<option value="yes" data-callback="rollback">Ṣawari</option>
-												<option value="">O dabọ</option>
+											<select name="callbackTest" data-conv-question="Oniyi! O tun le ṣawari awọn aṣayan miiran" id="">
+												<option value="yes" data-callback="rollback">O dabọ</option>
 											</select>
 										</div>
 									</div>
@@ -734,44 +683,44 @@
 
 	<script>
 		function matthew(stateWrapper, ready) {
-			window.open("https://api.whatsapp.com/send?phone=2348034025586&text=I'd%20like%20to%20talk%20to%20you%20about%20COVID-19%20Virus");
+			window.open("https://api.whatsapp.com/send?phone=2347062964124&text=I'd%20like%20to%20talk%20to%20you%20about%20COVID-19%20Virus");
 			ready();
 		}
 		function tokunbo(stateWrapper, ready) {
-			window.open("https://api.whatsapp.com/send?phone=2348034025586");
+			window.open("https://api.whatsapp.com/send?phone=2348063572194&text=I'd%20like%20to%20talk%20to%20you%20about%20COVID-19%20Virus");
 			ready();
 		}
 		function qoyum(stateWrapper, ready) {
-			window.open("https://api.whatsapp.com/send?phone=2348034025586");
+			window.open("https://api.whatsapp.com/send?phone=2348034025586&text=I'd%20like%20to%20talk%20to%20you%20about%20COVID-19%20Virus");
 			ready();
 		}
 		function amaka(stateWrapper, ready) {
-			window.open("https://api.whatsapp.com/send?phone=2348034025586");
+			window.open("https://api.whatsapp.com/send?phone=2348034025586&text=I'd%20like%20to%20talk%20to%20you%20about%20COVID-19%20Virus");
 			ready();
 		}
 		function tolulope(stateWrapper, ready) {
-			window.open("https://api.whatsapp.com/send?phone=2348034025586");
+			window.open("https://api.whatsapp.com/send?phone=2348034025586&text=I'd%20like%20to%20talk%20to%20you%20about%20COVID-19%20Virus");
 			ready();
 		}
 
-		// sending email
+		// sending email in future
 
-		function sendEmail() {
-			Email.send({
-			Host: "smtp.gmail.com",
-			Username : "okonkwomaduabuchi@gmail.com",
-			Password : "08063572194",
-			To : 'maduabuchiokonkwo@gmail.com',
-			From : "okonkwomaduabuchi@gmail.com",
-			Subject : "Covid-19",
-			Body : "How are you hope you are good",
-			}).then(
-				// message => alert("mail sent successfully")
+		// function sendEmail() {
+		// 	Email.send({
+		// 	Host: "smtp.gmail.com",
+		// 	Username : "okonkwomaduabuchi@gmail.com",
+		// 	Password : "",
+		// 	To : 'maduabuchiokonkwo@gmail.com',
+		// 	From : "okonkwomaduabuchi@gmail.com",
+		// 	Subject : "Covid-19",
+		// 	Body : "How are you hope you are good",
+		// 	}).then(
+		// 		// message => alert("mail sent successfully")
 
-				console.log("mail sent")
+		// 		console.log("mail sent")
 		
-			);
-		}
+		// 	);
+		// }
 
 
 		//***************
@@ -780,155 +729,295 @@
 		function storeState(stateWrapper, ready) {
 			
 			rollbackTo = stateWrapper.current;
-			console.log("storeState called: ",rollbackTo);
+			// console.log("storeState called: ",rollbackTo);
 			ready();
 		}
 		function rollback(stateWrapper, ready) {
 
-			var q1 = Number(stateWrapper.answers.q1.value);
-			var q2 = Number(stateWrapper.answers.q2.value);
-			var q3 = Number(stateWrapper.answers.q3.value);
-			var q4 = Number(stateWrapper.answers.q4.value);
-			var q5 = Number(stateWrapper.answers.q5.value);
-			var q6 = Number(stateWrapper.answers.q6.value);
-			var q7 = Number(stateWrapper.answers.q7.value);
-			var q8 = Number(stateWrapper.answers.q8.value);
-			var q9 = Number(stateWrapper.answers.q9.value);
-			var q10 = Number(stateWrapper.answers.q10.value);
-			var q11 = Number(stateWrapper.answers.q11.value);
-			var q12 = Number(stateWrapper.answers.q12.value);
+			// var q1 = Number(stateWrapper.answers.q1.value);
+			// var q2 = Number(stateWrapper.answers.q2.value);
+			// var q3 = Number(stateWrapper.answers.q3.value);
+			// var q4 = Number(stateWrapper.answers.q4.value);
+			// var q5 = Number(stateWrapper.answers.q5.value);
+			// var q6 = Number(stateWrapper.answers.q6.value);
+			// var q7 = Number(stateWrapper.answers.q7.value);
+			// var q8 = Number(stateWrapper.answers.q8.value);
+			// var q9 = Number(stateWrapper.answers.q9.value);
+			// var q10 = Number(stateWrapper.answers.q10.value);
+			// var q11 = Number(stateWrapper.answers.q11.value);
+			// var q12 = Number(stateWrapper.answers.q12.value);
 
-			var score = q1 + q2 + q3 + q4 + q5 + q6 + q7 + q8 + q9 + q10 + q11 + q12;
+			// var score = q1 + q2 + q3 + q4 + q5 + q6 + q7 + q8 + q9 + q10 + q11 + q12;
 
-			var flag = "";
+			// var flag = "";
 
-			if(score <= 2){
-				flag = "green";
-			}
-			else if(score <= 5){
-				flag = "blue"
-			}
-			else if(score <= 10){
-				flag = "yellow"
-			}
-			else{
-				flag = "red"
-			}
+			// if(score <= 2){
+			// 	flag = "green";
+			// }
+			// else if(score <= 5){
+			// 	flag = "blue"
+			// }
+			// else if(score <= 10){
+			// 	flag = "yellow"
+			// }
+			// else{
+			// 	flag = "red"
+			// }
 
-			if(score > 5){
-				const redflag = {
-					name: stateWrapper.answers.name.value,
-					email: stateWrapper.answers.email.value,
-					gender: stateWrapper.answers.gender.value,
-					phone: stateWrapper.answers.phonenumber.value,
-					age: stateWrapper.answers.age.value,
-					score: score,
-					flag: flag
+			// if(score > 5){
+			// 	const redflag = {
+			// 		name: stateWrapper.answers.name.value,
+			// 		email: stateWrapper.answers.email.value,
+			// 		gender: stateWrapper.answers.gender.value,
+			// 		phone: stateWrapper.answers.phonenumber.value,
+			// 		age: stateWrapper.answers.age.value,
+			// 		score: score,
+			// 		flag: flag
 
 
-				}
+			// 	}
 
-				db.collection('redflag').add(redflag).then(()=>{
-					console.log("New redflag added")
-				}).catch(err =>{
-					console.log(err);
-				})
+			// 	db.collection('redflag').add(redflag).then(()=>{
+			// 		console.log("New redflag added")
+			// 	}).catch(err =>{
+			// 		console.log(err);
+			// 	})
 
-			}
+			// }
 			
 			
 			
 			// console.log("rollback called: ", rollbackTo, originalState);
 			// console.log("answers at the time of user input: ", stateWrapper.answers);
-			console.log("score is " + score);
-			db.collection('users').add(stateWrapper.answers).then(() =>{
-        			console.log("new user added")
-    		}).catch(err =>{
-            console.log(err)
-    		})
+			// console.log("score is " + score);
+			// db.collection('users').add(stateWrapper.answers).then(() =>{
+        	// 		console.log("new user added")
+    		// }).catch(err =>{
+            // console.log(err)
+    		// })
 			if(rollbackTo!=false) {
 				if(originalState==false) {
 					originalState = stateWrapper.current.next;
-						console.log('stored original state');
+						// console.log('stored original state');
 				}
 				stateWrapper.current.next = rollbackTo;
-				console.log('changed current.next to rollbackTo');
+				// console.log('changed current.next to rollbackTo');
 			}
 			ready();
 		}
 		function restore(stateWrapper, ready) {
-			var q1 = Number(stateWrapper.answers.q1.value);
-			var q2 = Number(stateWrapper.answers.q2.value);
-			var q3 = Number(stateWrapper.answers.q3.value);
-			var q4 = Number(stateWrapper.answers.q4.value);
-			var q5 = Number(stateWrapper.answers.q5.value);
-			var q6 = Number(stateWrapper.answers.q6.value);
-			var q7 = Number(stateWrapper.answers.q7.value);
-			var q8 = Number(stateWrapper.answers.q8.value);
-			var q9 = Number(stateWrapper.answers.q9.value);
-			var q10 = Number(stateWrapper.answers.q10.value);
-			var q11 = Number(stateWrapper.answers.q11.value);
-			var q12 = Number(stateWrapper.answers.q12.value);
+			// var q1 = Number(stateWrapper.answers.q1.value);
+			// var q2 = Number(stateWrapper.answers.q2.value);
+			// var q3 = Number(stateWrapper.answers.q3.value);
+			// var q4 = Number(stateWrapper.answers.q4.value);
+			// var q5 = Number(stateWrapper.answers.q5.value);
+			// var q6 = Number(stateWrapper.answers.q6.value);
+			// var q7 = Number(stateWrapper.answers.q7.value);
+			// var q8 = Number(stateWrapper.answers.q8.value);
+			// var q9 = Number(stateWrapper.answers.q9.value);
+			// var q10 = Number(stateWrapper.answers.q10.value);
+			// var q11 = Number(stateWrapper.answers.q11.value);
+			// var q12 = Number(stateWrapper.answers.q12.value);
 
-			const now = new Date();
-			var score = q1 + q2 + q3 + q4 + q5 + q6 + q7 + q8 + q9 + q10 + q11 + q12;
+			// const now = new Date();
+			// var score = q1 + q2 + q3 + q4 + q5 + q6 + q7 + q8 + q9 + q10 + q11 + q12;
 
-			var flag = "";
+			// var flag = "";
 
-			if(score <= 2){
-				flag = "green";
-			}
-			else if(score <= 5){
-				flag = "blue"
-			}
-			else if(score <= 10){
-				flag = "yellow"
-			}
-			else{
-				flag = "red"
-			}
+			// if(score <= 2){
+			// 	flag = "green";
+			// }
+			// else if(score <= 5){
+			// 	flag = "blue"
+			// }
+			// else if(score <= 10){
+			// 	flag = "yellow"
+			// }
+			// else{
+			// 	flag = "red"
+			// }
 
-			if(score > 5){
-				const redflag = {
-					name: stateWrapper.answers.name.value,
-					email: stateWrapper.answers.email.value,
-					gender: stateWrapper.answers.gender.value,
-					phone: stateWrapper.answers.phonenumber.value,
-					age: stateWrapper.answers.age.value,
-					score: score,
-					flag: flag,
-					created_at: firebase.firestore.Timestamp.fromDate(now)
+			// if(score > 5){
+			// 	const redflag = {
+			// 		name: stateWrapper.answers.name.value,
+			// 		email: stateWrapper.answers.email.value,
+			// 		gender: stateWrapper.answers.gender.value,
+			// 		phone: stateWrapper.answers.phonenumber.value,
+			// 		age: stateWrapper.answers.age.value,
+			// 		score: score,
+			// 		flag: flag,
+			// 		created_at: firebase.firestore.Timestamp.fromDate(now)
 
 
-				}
+			// 	}
 
-				db.collection('redflag').add(redflag).then(()=>{
-					console.log("New redflag added")
-				}).catch(err =>{
-					console.log(err);
-				})
+			// 	db.collection('redflag').add(redflag).then(()=>{
+			// 		console.log("New redflag added")
+			// 	}).catch(err =>{
+			// 		console.log(err);
+			// 	})
 
-			}
+			// }
 			
-			db.collection('users').add(stateWrapper.answers).then(() =>{
-        			console.log("new user added")
-    		}).catch(err =>{
-            console.log(err)
-    		})
+			// db.collection('users').add(stateWrapper.answers).then(() =>{
+        	// 		console.log("new user added")
+    		// }).catch(err =>{
+            // console.log(err)
+    		// })
 			if(originalState != false) {
 				
 				stateWrapper.current.next = originalState;
-				console.log('changed current.next to originalState');
+				// console.log('changed current.next to originalState');
 			}
 			ready();
 		}
+
+
+
+
+// 		function rollback(stateWrapper, ready) {
+
+// var q1 = Number(stateWrapper.answers.q1.value);
+// var q2 = Number(stateWrapper.answers.q2.value);
+// var q3 = Number(stateWrapper.answers.q3.value);
+// var q4 = Number(stateWrapper.answers.q4.value);
+// var q5 = Number(stateWrapper.answers.q5.value);
+// var q6 = Number(stateWrapper.answers.q6.value);
+// var q7 = Number(stateWrapper.answers.q7.value);
+// var q8 = Number(stateWrapper.answers.q8.value);
+// var q9 = Number(stateWrapper.answers.q9.value);
+// var q10 = Number(stateWrapper.answers.q10.value);
+// var q11 = Number(stateWrapper.answers.q11.value);
+// var q12 = Number(stateWrapper.answers.q12.value);
+
+// var score = q1 + q2 + q3 + q4 + q5 + q6 + q7 + q8 + q9 + q10 + q11 + q12;
+
+// var flag = "";
+
+// if(score <= 2){
+// 	flag = "green";
+// }
+// else if(score <= 5){
+// 	flag = "blue"
+// }
+// else if(score <= 10){
+// 	flag = "yellow"
+// }
+// else{
+// 	flag = "red"
+// }
+
+// if(score > 5){
+// 	const redflag = {
+// 		name: stateWrapper.answers.name.value,
+// 		email: stateWrapper.answers.email.value,
+// 		gender: stateWrapper.answers.gender.value,
+// 		phone: stateWrapper.answers.phonenumber.value,
+// 		age: stateWrapper.answers.age.value,
+// 		score: score,
+// 		flag: flag
+
+
+// 	}
+
+// 	db.collection('redflag').add(redflag).then(()=>{
+// 		console.log("New redflag added")
+// 	}).catch(err =>{
+// 		console.log(err);
+// 	})
+
+// }
+
+
+
+// console.log("rollback called: ", rollbackTo, originalState);
+// console.log("answers at the time of user input: ", stateWrapper.answers);
+// console.log("score is " + score);
+// db.collection('users').add(stateWrapper.answers).then(() =>{
+// 		console.log("new user added")
+// }).catch(err =>{
+// console.log(err)
+// })
+// if(rollbackTo!=false) {
+// 	if(originalState==false) {
+// 		originalState = stateWrapper.current.next;
+// 			console.log('stored original state');
+// 	}
+// 	stateWrapper.current.next = rollbackTo;
+// 	console.log('changed current.next to rollbackTo');
+// }
+// ready();
+// }
+function rest(stateWrapper, ready) {
+	var q1 = Number(stateWrapper.answers.q1.value);
+	var q2 = Number(stateWrapper.answers.q2.value);
+	var q3 = Number(stateWrapper.answers.q3.value);
+	var q4 = Number(stateWrapper.answers.q4.value);
+	var q5 = Number(stateWrapper.answers.q5.value);
+	var q6 = Number(stateWrapper.answers.q6.value);
+	var q7 = Number(stateWrapper.answers.q7.value);
+	var q8 = Number(stateWrapper.answers.q8.value);
+	var q9 = Number(stateWrapper.answers.q9.value);
+	var q10 = Number(stateWrapper.answers.q10.value);
+	var q11 = Number(stateWrapper.answers.q11.value);
+	var q12 = Number(stateWrapper.answers.q12.value);
+
+	const now = new Date();
+	var score = q1 + q2 + q3 + q4 + q5 + q6 + q7 + q8 + q9 + q10 + q11 + q12;
+
+	var flag = "";
+
+	if(score <= 2){
+		flag = "green";
+	}
+	else if(score <= 5){
+		flag = "blue"
+	}
+	else if(score <= 10){
+		flag = "yellow"
+	}
+	else{
+		flag = "red"
+	}
+
+	if(score > 5){
+		const redflag = {
+			name: stateWrapper.answers.name.value,
+			email: stateWrapper.answers.email.value,
+			gender: stateWrapper.answers.gender.value,
+			phone: stateWrapper.answers.phonenumber.value,
+			age: stateWrapper.answers.age.value,
+			score: score,
+			flag: flag,
+			created_at: firebase.firestore.Timestamp.fromDate(now)
+
+
+		}
+
+		db.collection('redflag').add(redflag).then(()=>{
+			// console.log("New redflag added")
+		}).catch(err =>{
+			// console.log(err);
+		})
+
+	}
+
+	db.collection('users').add(stateWrapper.answers).then(() =>{
+			// console.log("new user added")
+	}).catch(err =>{
+	// console.log(err)
+	})
+	ready();
+	}
+
+
 
 		
 	</script>
 	<script>
 		jQuery(function($){
 			convForm = $('#chat').convform({selectInputStyle: 'disable'});
-			console.log(convForm);
+			// console.log(convForm);
 		});
 	</script>
 	<script src="covidjs/botstatus.js"></script>
