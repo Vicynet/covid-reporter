@@ -528,81 +528,81 @@
 										</div>
 											
 										<div data-conv-case="yoruba">
-											<input type="text" id="username" name="name" data-conv-question="Dara! Ni akọkọ, sọ fun orukọ rẹ ni kikun, jọwọ.|Dara! Jọwọ, sọ orukọ rẹ fun mi lakoko.">
+											<input type="text" id="username" name="name" data-conv-question="Odaa! l'akọkọ, sọ orukẹ rẹ ni funmi.">
 											<input data-conv-question="Tẹ ninu imeeli rẹ" data-pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" id="email" type="email" name="email" required placeholder="Kini imeeli rẹ?">
-											<input data-conv-question="Tẹ nọmba foonu rẹ" data-pattern="^[0]\d{10}$" id="phone" type="tel" name="phonenumber" required placeholder="Kini nọmba foonu rẹ?">
-											<select name="gender" id="gender" data-conv-question="Jọwọ yan akọ tabi abo rẹ" >
+											<input data-conv-question="Tẹ nọmba ẹrọ ibaniṣọrọ rẹ ṣi ibi yi" data-pattern="^[0]\d{10}$" id="phone" type="tel" name="phonenumber" required placeholder="Kini nọmba foonu rẹ?">
+											<select name="gender" id="gender" data-conv-question="Ṣẹ ọkunrin ni ẹ abi ọbinrin?" >
 												<option value="male">Ọkunrin</option>
 												<option value="female">Obinrin</option>
 											</select>
 											<input data-conv-question="Tẹ ni ọjọ-ori rẹ" type="number" id="age"  name="age" required placeholder="Kini ọjọ-ori rẹ?">
 											<!-- (note that this question doesn't expect any answer) -->
-											<input type="text" data-conv-question="Pẹlẹ o, {name}:0! &#128515 O jẹ igbadun lati pade rẹ." data-no-answer="true">
+											<input type="text" data-conv-question="Kaabọ, {name}:0! &#128515 inu waa dun lati ba ẹ ṣ’ọrọ." data-no-answer="true">
 											<!-- answer needed -->
-											<select data-callback="storeState" data-conv-question="Bawo ni iwọ yoo fẹ lati ṣe iranlọwọ?" name="inquiry">
-												<option value="status">Ṣayẹwo ipo Covid-19</option>
-												<option value="prevention">Bi o ṣe le ṣe idiwọ ọlọjẹ Covid-19</option>
-												<option value="symptoms">Awọn aami aisan ti o jọmọ si ọlọjẹ Covid-19</option>
+											<select data-callback="storeState" data-conv-question="B’awọ ni a ṣẹ lẹ ran ẹ l’ọwọ?" name="inquiry">
+												<option value="status">Mọ fẹ mọ nipa ilẹra mi bi ọ ṣẹ kan ṣi arun COVID-19</option>
+												<option value="prevention">Mọ fẹ ṣẹ idaabọbọ araa mi nipa arun Covid-19</option>
+												<option value="symptoms">Mọ fẹ mọ nipa ifamihan arun Covid-19</option>
 											</select>
 
 											<!-- (note that this question doesn't expect any answer) -->
 											<!-- choose cases -->
 											<div data-conv-fork="inquiry">
 	                                    		<div data-conv-case="status">
-													<input type="text" name="name" data-conv-question="Dara! Jowo fi idahun si awọn ibeere wọnyi" data-no-answer="true">
+													<input type="text" name="name" data-conv-question="Ọdaa, jọwọ dahun awọn ibẹẹrẹ yi" data-no-answer="true">
 
 
-													<select name="q1" class="stat" data-conv-question="Ṣe o ni Ikọaláìdúró?">
+													<select name="q1" class="stat" data-conv-question="Ṣẹ ọun wu’kọ?">
 														<option value="1">Bẹẹni</option>
 														<option value="0">Rara</option>
 													</select>
-													<select name="q2" class="stat" data-conv-question="Ṣe o ni otutu?">
+													<select name="q2" class="stat" data-conv-question="Ṣẹ ọtutu’n mu ẹ?">
 														<option value="1">Bẹẹni</option>
 														<option value="0">Rara</option>
 													</select>	                                    
-													<select name="q3" class="stat" data-conv-question="Ṣe o ni gbuuru?">
+													<select name="q3" class="stat" data-conv-question="Ṣẹ ọun ya’gbẹ ṣọrọọ?">
 														<option value="1">Bẹẹni</option>
 														<option value="0">Rara</option>
 													</select>	                                    
-													<select name="q4" class="stat" data-conv-question="Ṣe o ni ọfun ọgbẹ?">
+													<select name="q4" class="stat" data-conv-question="Ṣẹ ọfun n’ta ẹ?">
 														<option value="1">Bẹẹni</option>
 														<option value="0">Rara</option>
 													</select>	                                    
-													<select name="q5" class="stat" data-conv-question="Ṣe o ni iriri MYALGIA tabi awọn isun-ara?">
+													<select name="q5" class="stat" data-conv-question="Ṣẹ ọ ni ara rirọ?">
 														<option value="1">Bẹẹni</option>
 														<option value="0">Rara</option>
 													</select>	                                    
-													<select name="q6" class="stat" data-conv-question="Ṣe orififo?">
+													<select name="q6" class="stat" data-conv-question="Ṣẹ ọri’n fọ ẹ?">
 														<option value="1">Bẹẹni</option>
 														<option value="0">Rara</option>
 													</select>	                                    
-													<select name="q7" class="stat" data-conv-question="Ṣe o ni iba (LiLohun 37,8 ìyí celcius ati loke)?">
+													<select name="q7" class="stat" data-conv-question="Ṣẹ ara rẹ’n ṣẹ gbigbọna?">
 														<option value="1">Bẹẹni</option>
 														<option value="0">Rara</option>
 													</select>
-													<select name="q8" data-conv-question="Ṣe o ni iṣoro eemi?">
+													<select name="q8" data-conv-question="Ṣẹ ọ ma’n ni inira tọ ọ ba’n mi?">
 														<option value="2">Bẹẹni</option>
 														<option value="0">Rara</option>
 													</select>
-													<select name="q9" class="stat" data-conv-question="Ṣe o n ni iriri rirẹ?">
+													<select name="q9" class="stat" data-conv-question="Ṣẹ ọ ma’n tẹtẹ rẹ ẹ?">
 														<option value="2">Bẹẹni</option>
 														<option value="0">Rara</option>
 													</select>
-													<select name="q10" class="stat" data-conv-question="Njẹ o rin irin ajo laipẹ ni awọn ọjọ 14 sẹhin?">
+													<select name="q10" class="stat" data-conv-question="Ṣẹ ọ ti rin irinajọ l’ẹnu ọjọ  mẹfa di’lọgun">
 														<option value="3">Bẹẹni</option>
 														<option value="0">Rara</option>
 													</select>
-													<select name="q11" class="stat" data-conv-question="Ṣe o ni itan irin-ajo si agbegbe CVEID-19 ti o ni akopọ?">
+													<select name="q11" class="stat" data-conv-question="Ṣẹ ọ ti rin irinajọ lọ ṣi ọrilẹ’ẹdẹ kan ti wọn ti nipa ninu arun COVID-19?">
 														<option value="3">Bẹẹni</option>
 														<option value="0">Rara</option>
 													</select>
-													<select name="q12" class="stat" id="submitButton" onchange="submitQuiz()" data-conv-question="Ṣe o ni olubasọrọ taara tabi o n tọju alaisan COVID-19 rere?">
+													<select name="q12" class="stat" id="submitButton" onchange="submitQuiz()" data-conv-question="Ṣẹ ọ ti ni ibaṣ’ọrọ tabi ọ ti ṣẹ itọju fun ẹni tọ ọ ni arun CỌVID-19?">
 														<option value="3" data-callback="rest">Bẹẹni</option>
 														<option value="0" data-callback="rest">Rara</option>
 													</select>
-													<input type="text" data-conv-question="Ti Dimegilio idanwo rẹ ba wa ni isalẹ 3, O le ni wahala, ṣugbọn o kan ṣọra!" data-no-answer="true">
-													<input type="text" data-conv-question="Ti Dimegilio idanwo rẹ ba wa laarin 3-5, Hydrate daradara ki o tọju itọju ti ara ẹni ti o tọ. Ṣe akiyesi ati tun-ṣe ayẹwo lẹhin ọjọ 2!" data-no-answer="true">
-													<input type="text" data-conv-question="Ti Dimegilio idanwo rẹ loke 5, Wa ijumọsọrọ pẹlu Dokita kan!" data-no-answer="true">
+													<input type="text" data-conv-question="Ti ibajadẹ ayẹwọ rẹ ba kẹrẹ ju mẹta lọ, ara rọ ẹ ni. Ki ọ ni iṣimi tọ’pẹyẹ!" data-no-answer="true">
+													<input type="text" data-conv-question="Ti ibajadẹ ayẹwọ rẹ ba jẹ l’arin mẹta ati marun, ki ọ mu ọmi daada, ki ọ ṣi ṣẹ itọju ara rẹ dada, ki ọ ṣi pada wa ṣibi lẹyin ọjọ mẹji!" data-no-answer="true">
+													<input type="text" data-conv-question="Ti ibajadẹ ayẹwọ rẹ ba ju marun lọ, ki ọ kan ṣi awọn dọkita tọ ṣunmọ ẹ ju!" data-no-answer="true">
 													
 												</div>
 												<div data-conv-case="prevention">
