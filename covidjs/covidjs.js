@@ -3,7 +3,8 @@
 var covid_date = new Date();
 document.getElementById("date").innerHTML = covid_date.toDateString();
 
-//For dashboard, Get confirmed cases, recovery, deaths
+//For all dashboards, Get confirmed cases, recovery, deaths
+
 var dash = new XMLHttpRequest()
 
 dash.open('GET', 'https://api.covid19api.com/summary', true)
@@ -13,60 +14,96 @@ dash.onload = function()
     //check if the status is 200(means everything is okay)
     if (this.status === 200) {
             var data = JSON.parse(this.responseText).Countries;
-            
+            var globalStat = JSON.parse(this.responseText).Global;
+
             for (i in data) {
 
                 if (data[i].Country == "Nigeria") {
                   document.getElementById("cases").innerHTML = data[i].TotalConfirmed
                   document.getElementById("death").innerHTML = data[i].TotalDeaths
                   document.getElementById("recover").innerHTML = data[i].TotalRecovered
-                  var death = parseInt(document.getElementById("death").innerHTML)
-                  var recovered = parseInt(document.getElementById("recover").innerHTML)
-                  var all = parseInt(document.getElementById("cases").innerHTML)
-                  document.getElementById("active").innerHTML = all - (death + recovered)
-                  document.getElementById('closed').innerHTML = death + recovered
+                  document.getElementById("active").innerHTML = data[i].TotalConfirmed - (data[i].TotalDeaths + data[i].TotalRecovered)
+                  document.getElementById('closed').innerHTML = data[i].TotalDeaths + data[i].TotalRecovered
                 }
              
             }
-            
+
+              if (globalStat != 0) {
+                document.getElementById("totalCases").innerHTML = globalStat.TotalConfirmed.toLocaleString();
+                document.getElementById("totalRecovery").innerHTML = globalStat.TotalRecovered.toLocaleString();
+                document.getElementById("totalDeaths").innerHTML = globalStat.TotalDeaths.toLocaleString();
+              }            
     }
 }
 //call send
 dash.send();
 
 
-//World Statistics
-var world = new XMLHttpRequest()
-
-world.open('GET', 'https://api.covid19api.com/summary', true)
-//call the onload 
-world.onload = function() 
-{
-    //check if the status is 200(means everything is okay)
-    if (this.status === 200) 
-        {
-              var data = JSON.parse(this.responseText).Countries;
-              var cases = 0
-              var recovery = 0
-              var deaths = 0
 
 
-            for (i in data) {
-                if (data != 0) {
-                    cases += data[i].TotalConfirmed
-                    recovery += data[i].TotalRecovered
-                    deaths += data[i].TotalDeaths
-                }
-             
-              }
+// var dash = new XMLHttpRequest()
+
+// dash.open('GET', 'https://api.covid19api.com/summary', true)
+// //call the onload 
+// dash.onload = function() 
+// {
+//     //check if the status is 200(means everything is okay)
+//     if (this.status === 200) {
+//             var data = JSON.parse(this.responseText).Countries;
             
-            document.getElementById("totalCases").innerHTML = cases.toLocaleString();
-            document.getElementById("totalRecovery").innerHTML = recovery.toLocaleString();
-            document.getElementById("totalDeaths").innerHTML = deaths.toLocaleString();
-}
-        }
-//call send
-world.send();
+//             for (i in data) {
+
+//                 if (data[i].Country == "Nigeria") {
+//                   document.getElementById("cases").innerHTML = data[i].TotalConfirmed
+//                   document.getElementById("death").innerHTML = data[i].TotalDeaths
+//                   document.getElementById("recover").innerHTML = data[i].TotalRecovered
+//                   var death = parseInt(document.getElementById("death").innerHTML)
+//                   var recovered = parseInt(document.getElementById("recover").innerHTML)
+//                   var all = parseInt(document.getElementById("cases").innerHTML)
+//                   document.getElementById("active").innerHTML = all - (death + recovered)
+//                   document.getElementById('closed').innerHTML = death + recovered
+//                 }
+             
+//             }
+            
+//     }
+// }
+// //call send
+// dash.send();
+
+
+//World Statistics
+// var world = new XMLHttpRequest()
+
+// world.open('GET', 'https://api.covid19api.com/summary', true)
+// //call the onload 
+// world.onload = function() 
+// {
+//     //check if the status is 200(means everything is okay)
+//     if (this.status === 200) 
+//         {
+//               var data = JSON.parse(this.responseText).Countries;
+//               var cases = 0
+//               var recovery = 0
+//               var deaths = 0
+
+
+//             for (i in data) {
+//                 if (data != 0) {
+//                     cases += data[i].TotalConfirmed
+//                     recovery += data[i].TotalRecovered
+//                     deaths += data[i].TotalDeaths
+//                 }
+             
+//               }
+            
+//             document.getElementById("totalCases").innerHTML = cases.toLocaleString();
+//             document.getElementById("totalRecovery").innerHTML = recovery.toLocaleString();
+//             document.getElementById("totalDeaths").innerHTML = deaths.toLocaleString();
+// }
+//         }
+// //call send
+// world.send();
 
 
 
