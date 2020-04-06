@@ -111,11 +111,11 @@ function diagnosis() {
 	else if (calcScore <= 5) {
 		showScore = showScore + "&nbsp; <strong>Hydrate properly and keep proper personal hygiene. Observe and re-evaluate after 2 days!</strong>"
 	}
-	else if (calcScore <= 10) {
-		showScore = showScore + "&nbsp; <strong>Seek consultation with a Doctor!</strong>"
-	}
+	// else if (calcScore <= 10) {
+	// 	showScore = showScore + "&nbsp; <strong>Seek consultation with a Doctor!</strong>"
+	// }
 	else {
-		showScore = showScore + "&nbsp; <strong>Call the NCDC, You might be a carrier!</strong>"
+		showScore = showScore + "&nbsp; <strong>Seek immediate consultation with a Doctor!</strong>"
 	};
 	document.getElementById('patientScore').innerHTML = showScore;
 	
