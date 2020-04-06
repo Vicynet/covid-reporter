@@ -49,6 +49,7 @@
 											<!-- answer needed -->
 											<select name="inquiry" data-callback="storeState" data-conv-question="How would you want to be assisted?">
 												<option value="status">Check Covid-19 status</option>
+												<option value="recording">What is Covid-19</option>
 												<option value="prevention">How to prevent Covid-19 virus spread</option>
 												<option value="symptoms">Symptoms relating to Covid-19 virus</option>
 											</select>
@@ -111,6 +112,12 @@
 													<input type="text" data-conv-question="If your test score is between 3-5, Hydrate properly and keep proper personal hygiene. Observe and re-evaluate after 2 days!" data-no-answer="true">
 													<input type="text" data-conv-question="If your test score above 5, Seek consultation with a Doctor!" data-no-answer="true">
 													
+												</div>
+
+												<div data-conv-case="recording">
+													<select name="callbackTest" data-conv-question="Click to listen">
+														<option value="englishcovid" data-callback="englishcovid">Listen!</option>
+													</select>
 												</div>
 												
 
@@ -284,11 +291,10 @@
 										</div>
 											
 										<div data-conv-case="hausa">
-											<input type="text" id="username" name="name" data-conv-question="Gaskiya! Da farko, gaya mani cikakken sunanka, don Allah.|
-											Lafiya! Don Allah, gaya mani sunanka da farko.">
-											<input data-conv-question="Rubuta a cikin imel" data-pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" id="email" type="email" name="email" required placeholder="Menene imel?">
-											<input data-conv-question="Rubuta a lambar wayarka" data-pattern="^[0]\d{10}$" id="phone" type="tel" name="phonenumber" required placeholder="Menene lambar wayar ku?">
-											<select name="gender" id="gender" data-conv-question="Da fatan za a zabi jinsi" >
+											<input type="text" id="username" name="name" data-conv-question="Rubuta sunan ka/ki anan">
+											<input data-conv-question="Rubuta wasikar lantarkin ka/ki anan" data-pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" id="email" type="email" name="email" required placeholder="Menene imel?">
+											<input data-conv-question="Rubuta lambar wayan ka/ki anan" data-pattern="^[0]\d{10}$" id="phone" type="tel" name="phonenumber" required placeholder="Menene lambar wayar ku?">
+											<select name="gender" id="gender" data-conv-question="Kai na miji ne ko na mace?" >
 												<option value="male">Namiji</option>
 												<option value="female">Mace</option>
 											</select>
@@ -297,105 +303,104 @@
 											<!-- (note that this question doesn't expect any answer) -->
 											<input type="text" data-conv-question="Sannu, {name}:0! &#128515 Abun farin ciki ne in hadu da ku." data-no-answer="true">
 											<!-- answer needed -->
-											<select data-callback="storeState" data-conv-question="Taya zaka so a taimaka maka?" name="inquiry">
-												<option value="status">Duba halin Covid-19</option>
-												<option value="prevention">Yadda za a hana yada cutar Covid-19</option>
-												<option value="symptoms">Kwayar cutar cututtukan da suka shafi ƙwayar cuta ta Covid-19</option>
+											<select data-callback="storeState" data-conv-question="Ta ya ka/ki so in taimaka?" name="inquiry">
+												<option value="status">Duba gwajin lafiya gamai da cutar COVID-19</option>
+												<option value="prevention">Yan da za iya kare mutum game da COVID-19</option>
+												<option value="symptoms">Yar da ake gane alamun COVID-19</option>
 											</select>
 
 											<!-- (note that this question doesn't expect any answer) -->
 											<!-- choose cases -->
 											<div data-conv-fork="inquiry">
 	                                    		<div data-conv-case="status">
-													<input type="text" name="name" data-conv-question="Gaskiya! Da kyau a amsa waɗannan tambayoyin" data-no-answer="true">
+													<input type="text" name="name" data-conv-question="Gaskiya! Amsa tambayoyin nan" data-no-answer="true">
 
-													<select name="q1" class="stat" data-conv-question="Kuna da tari?">
+													<select name="q1" class="stat" data-conv-question="Ka/Ki na da tari?">
 														<option value="1">Haka ne</option>
 														<option value="0">A'a</option>
 													</select>
-													<select name="q2" class="stat" data-conv-question="Kuna da sanyi?">
+													<select name="q2" class="stat" data-conv-question="Ka/Ki na jin sanyi?">
 														<option value="1">Haka ne</option>
 														<option value="0">A'a</option>
 													</select>	                                    
-													<select name="q3" class="stat" data-conv-question="Shin kuna fama da zawo?">
+													<select name="q3" class="stat" data-conv-question="Ka/Ki na zawo?">
 														<option value="1">Haka ne</option>
 														<option value="0">A'a</option>
 													</select>	                                    
-													<select name="q4" class="stat" data-conv-question="Kuna da ciwon makogwaro?">
+													<select name="q4" class="stat" data-conv-question="ka/ki na jin kak'kayi a makogoro?">
 														<option value="1">Haka ne</option>
 														<option value="0">A'a</option>
 													</select>	                                    
-													<select name="q5" class="stat" data-conv-question="Shin kana fuskantar MYALGIA ko ciwon jiki?">
+													<select name="q5" class="stat" data-conv-question="Ka/Ki na da ciwon gabbobi ko jiki?">
 														<option value="1">Haka ne</option>
 														<option value="0">A'a</option>
 													</select>	                                    
-													<select name="q6" class="stat" data-conv-question="Kuna da ciwon kai?">
+													<select name="q6" class="stat" data-conv-question="Ka/Ki na ciwon ka'i?">
 														<option value="1">Haka ne</option>
 														<option value="0">A'a</option>
 													</select>	                                    
-													<select name="q7" class="stat" data-conv-question="Kuna da zazzabi (Zazzabi 37.8 digiri celcius da sama)?">
+													<select name="q7" class="stat" data-conv-question="ka/ki na da fever da ya fi 37.8C?">
 														<option value="1">Haka ne</option>
 														<option value="0">A'a</option>
 													</select>
-													<select name="q8" data-conv-question="Shin kuna fuskantar wahalar numfashi?">
+													<select name="q8" data-conv-question="Ka/Ki na jin wuya wajan numfashi?">
 														<option value="2">Haka ne</option>
 														<option value="0">A'a</option>
 													</select>
-													<select name="q9" class="stat" data-conv-question="Shin kana fuskantar gajiya?">
+													<select name="q9" class="stat" data-conv-question="ka/ki na jin gajiya a kai a kai?">
 														<option value="2">Haka ne</option>
 														<option value="0">A'a</option>
 													</select>
-													<select name="q10" class="stat" data-conv-question="Shin ka taɓa tafiya kwanannan cikin kwanaki 14 da suka gabata?">
+													<select name="q10" class="stat" data-conv-question="Ka/Ki yi tafiya a cikin kwanaki goma sha hudu da ta wuce?">
 														<option value="3">Haka ne</option>
 														<option value="0">A'a</option>
 													</select>
-													<select name="q11" class="stat" data-conv-question="Shin kuna da tarihin tafiya zuwa yankin COVID-19 da ke fama da cutar?">
+													<select name="q11" class="stat" data-conv-question="Ka/Ki tafiya daga wajajen da akwai tarihin COVID-19?">
 														<option value="3">Haka ne</option>
 														<option value="0">A'a</option>
 													</select>
-													<select name="q12" class="stat" id="submitButton" onchange="submitQuiz()" data-conv-question="Shin kuna da takamaiman lamba ko kuna kula da kyakkyawan haƙuri na COVID-19?">
+													<select name="q12" class="stat" id="submitButton" onchange="submitQuiz()" data-conv-question="Ka/Ki na kulla da mai cutar COVID-19 ko ka/ki na da harka da mai cutar COVID-19?">
 														<option value="3" data-callback="rest">Haka ne</option>
 														<option value="0" data-callback="rest">A'a</option>
 													</select>
-													<input type="text" data-conv-question="
-													Idan gwajin ku ya kasance ƙasa da 3, Wataƙila ana iya damuwa, amma ku ci gaba da lura!" data-no-answer="true">
-													<input type="text" data-conv-question="Idan ci gaban gwajin ku ya kasance tsakanin 3-5, Tsarkewa yadda yakamata ku kiyaye tsabtataccen ɗinka na mutum. Kula da sake kimantawa bayan kwana 2!" data-no-answer="true">
-													<input type="text" data-conv-question="Idan ci gaban gwajin ku a sama da 5, Nemi shawara tare da Likita!" data-no-answer="true">
+													<input type="text" data-conv-question="In dai gwajin binchike na kasa da uku, ba wuya danniya ne. A kulla da jiki!" data-no-answer="true">
+													<input type="text" data-conv-question="In dai gwajin binchike na tsakanin uku da biyar, a kulla da shan ruwa da kiwon lafiya. Bayan kwanan biyu, a kara binchike!" data-no-answer="true">
+													<input type="text" data-conv-question="In dai gwajin binchike yana biyar sama, a nema ganin likita!" data-no-answer="true">
 													
 												</div>
 												<div data-conv-case="prevention">
-													<input type="text" data-conv-question="Anan akwai hanyoyi masu zuwa zaku iya taimakawa hana yaduwar kwayar COVID-19 virus" data-no-answer="true">
-													<input type="text" data-conv-question="1. A kai a kai kuma a wanke hannaye da sabulu a ƙarƙashin ruwa mai gudu ko amfani da tsabtace giya idan ba ruwa" data-no-answer="true">
-													<input type="text" data-conv-question="2. Yi biyayya da umarnin nationalasa da na jihohi waɗanda ke neman sokewa da nisantar babban taro, gami da wuraren Ibada, taron jama'a da wasanni da kuma kasancewa a gida" data-no-answer="true">
-													<input type="text" data-conv-question="3. Kula da aƙalla nisan mil 2 tsakanin kai da duk wani mai amai da hancin da ya toka" data-no-answer="true">
-													<input type="text" data-conv-question="4. Guji wuraren da cunkoson jama'a kamar kasuwannin budewa, manyan kantuna da kantin magani" data-no-answer="true">
-													<input type="text" data-conv-question="5. Use of no-touch greetings" data-no-answer="true">
-													<input type="text" data-conv-question="6. Zauna a gida idan kun ji rashin lafiya tare da alamu kamar zazzabi, tari da wahala a cikin numfashi, Nemi shawara tare da Likita!" data-no-answer="true">
+													<input type="text" data-conv-question="Ga yar da za a iya kulla da jiki kar cutar COVID-19 da kama ka/ki" data-no-answer="true">
+													<input type="text" data-conv-question="1. Wanke hannun ka/ki da kyau da sabulu a ruwa mai gudu ko a yi amfani da ruwan sanitizer idan ba ruwa kusa." data-no-answer="true">
+													<input type="text" data-conv-question="2. A bi dokar gobnati da ta ce a daina shiga jama'a wajajen addu'a, hutu ko wasanni. Ko wa ya zauna a gida" data-no-answer="true">
+													<input type="text" data-conv-question="3. A lura da meter biyu tsakanin kai da mai tari ko atishawa" data-no-answer="true">
+													<input type="text" data-conv-question="4. A nisanche jama'a a wajaje kamar kasuwa, shaguna da kemis" data-no-answer="true">
+													<input type="text" data-conv-question="5. A bar shan hanu da juna wajen gaisuwa" data-no-answer="true">
+													<input type="text" data-conv-question="6. A zauna a gida in dai mutum ya gan alamu kamar tari, fever da damuwa wajen numfashi. Kuma a nema ganin likita da wuri!" data-no-answer="true">
 													
 												</div>
 												<div data-conv-case="symptoms">
 													<input type="text" data-conv-question="Wadannan suna alamomin da mutum zai ji idan yana da kwayar COVID-19" data-no-answer="true">
-													<input type="text" data-conv-question="1. Arfin bayyanar COVID-19 na iya kasancewa daga mai laushi zuwa zazzabi mai zafi" data-no-answer="true">
-													<input type="text" data-conv-question="2. M bushe tari" data-no-answer="true">
-													<input type="text" data-conv-question="3. Shortaramar numfashi ko wahala a cikin numfashi" data-no-answer="true">
-													<input type="text" data-conv-question="4. Gajiya ko gajiya" data-no-answer="true">
-													<input type="text" data-conv-question="5. M jiki aches" data-no-answer="true">
+													<input type="text" data-conv-question="1. A cikin alamun COVID-19 shine fever daga kadan har ta yi tsanani" data-no-answer="true">
+													<input type="text" data-conv-question="2. Busheshen tari" data-no-answer="true">
+													<input type="text" data-conv-question="3. Yankewan numfashi ko matsala wajen numfashi" data-no-answer="true">
+													<input type="text" data-conv-question="4. Gajiya akai akai " data-no-answer="true">
+													<input type="text" data-conv-question="5. Ciwon gabbobi ko jiki akai akai" data-no-answer="true">
 													
 												</div>
 											</div>
 
-											<select name="callbackTest" data-conv-question="Kuna so ku tattauna da masanin kiwon lafiya yanzu ko samun wasu bayanai">
-												<option value="yes" data-callback="rollback" id="userScore">Sauran Bayani</option>
-												<option value="no" data-callback="restore">Yi magana da masanin kiwon lafiya</option>
+											<select name="callbackTest" data-conv-question="Kana so ka/ki yi magana da masanin kiwon lafiya ko karin gane wa game da COVID-19?">
+												<option value="yes" data-callback="rollback" id="userScore">Ka rin gane wa</option>
+												<option value="no" data-callback="restore">Magana da masanin kiwon lafiya</option>
 											</select>
-											<select name="callbackTest" data-conv-question="Kuna iya zaɓar kowane wakilin lafiyarmu da yake akwai">
+											<select name="callbackTest" data-conv-question="Za ka/ki zaba daga cikin wa'enan masanin kiwon lafiya a yi magana da sunan">
 												<option value="matthew" data-callback="matthew">Matthew</option>
 												<option value="tokunbo" data-callback="tokunbo">Tokunbo</option>
 												<option value="qoyum" data-callback="qoyum">Qoyum</option>
 												<option value="amaka" data-callback="amaka">Amaka</option>
 												<option value="tolulope" data-callback="tolulope">Tolulope</option>
 											</select>
-											<select data-conv-question="Da fatan kun sami taimakon da kuke so?">
+											<select data-conv-question="Muna fatan an samu taimakon da ake nema da ga nan?">
 												<option value="yes">Haka ne!</option>
 												<option value="def">Tabbas!</option>
 											</select>
@@ -420,6 +425,7 @@
 											<!-- answer needed -->
 											<select data-callback="storeState" data-conv-question="Kedu ka ị ga - esi chọọ ka enyere gị aka?" name="inquiry">
 												<option value="status">Lelee ọnọdụ gi gbaasara Covid-19</option>
+												<option value="recording">O gini bu Covid-19</option>
 												<option value="prevention">Etu esi egbochi nje Covid-19 ịgbasa</option>
 												<option value="symptoms">Mgbaàmà metụtara nje Covid-19</option>
 											</select>
@@ -483,6 +489,13 @@
 													<input type="text" data-conv-question="Ọ bụrụ n'kara ule gị dị karịri akara ise, chọwa onye okachamara ahuike!" data-no-answer="true">
 													
 												</div>
+
+												<div data-conv-case="recording">
+													<select name="callbackTest" data-conv-question="Pịa ki gee ntị">
+														<option value="igbocovid" data-callback="igbocovid">Gee ntị!</option>
+													</select>
+												</div>
+
 												<div data-conv-case="prevention">
 													<input type="text" name="name" data-conv-question="Ọ dị mma! Ndị a bụ ụzọ ị ga-esi nọrọ nchekwa" data-no-answer="true">
 
@@ -541,6 +554,7 @@
 											<!-- answer needed -->
 											<select data-callback="storeState" data-conv-question="Bawo ni o se nílò ìrànlowo mi?" name="inquiry">
 												<option value="status">Mon bóyá oòní aìsàn COVID-19</option>
+												<option value="recording">Kini Covid-19?</option>
 												<option value="prevention">Bi osele da itankale kòkòrò COVID-19 dúró</option>
 												<option value="symptoms">Àwon àpeere ti kòkòrò COVID-19 ma n fihan</option>
 											</select>
@@ -605,6 +619,13 @@
 													<input type="text" data-conv-question="Ti abajade re ba ju marun lo(>5), Tete to awon onísègùn òyìnbó lo!" data-no-answer="true">
 													
 												</div>
+
+												<div data-conv-case="recording">
+													<select name="callbackTest" data-conv-question="Tẹ lati tẹtisi">
+														<option value="yorubacovid" data-callback="yorubacovid">Tẹtisi!</option>
+													</select>
+												</div>
+
 												<div data-conv-case="prevention">
 
 													<input type="text" data-conv-question="Àwon ilana yi ni o ni lati tele lati le da itankale kòkòrò COVID-19" data-no-answer="true">
@@ -699,6 +720,18 @@
 		}
 		function tolulope(stateWrapper, ready) {
 			window.open("https://api.whatsapp.com/send?phone=2348034025586&text=I'd%20like%20to%20talk%20to%20you%20about%20COVID-19%20Virus");
+			ready();
+		}
+		function englishcovid(stateWrapper, ready) {
+			window.open("audio/english-covid.mp3");
+			ready();
+		}
+		function igbocovid(stateWrapper, ready) {
+			window.open("audio/igbo-covid.mp3");
+			ready();
+		}
+		function yorubacovid(stateWrapper, ready) {
+			window.open("audio/yoruba-covid.mp3");
 			ready();
 		}
 
