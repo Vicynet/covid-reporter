@@ -30,6 +30,7 @@
     <script charset="UTF-8" src="//web.webpushs.com/js/push/422c94e8ff407466065446d79cd0c67c_1.js" async></script>
     <link rel="stylesheet" href="css/main.css" type="text/css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <!--Body Container-->
@@ -80,18 +81,25 @@
       </div>
     </div>
 
-    <div class="card text-white text-left p-3" id="hide-desktop" style="border-radius: 0em; margin: 0em; background-color: #FB5757;">
-      <p id="date"></p>
-      <h5>Corona Virus Cases - Nigeria</h5>
-      <h1 style="font-weight: bolder;" id="cases"></h1>
-      <blockquote class="blockquote mb-0">
-        <footer class="blockquote-footer text-white">
-          <small>
-            Do not panic <cite title="Source Title">Just stay at home</cite>
-          </small>
-        </footer>
-      </blockquote>
+    <div class="container-fluid dashboard" id="hide-desktop" style="margin: 1em auto;">
+      <div class="row text-center" style="padding: 0.5em;">
+        <div class="col-sm-6 col-lg-3">
+          <div class="panel">
+            <p id="date"></p>
+            <h5>Corona Virus Cases - Nigeria</h5>
+            <p id="cases" style="color: #FB5757; font-weight: 900; font-size: x-large;"></p><p>TOTAL CONFIRMED</p></div>
+            <blockquote class="blockquote mb-0 bg-light" style=" border-radius: 4px;">
+              <footer class="blockquote-footer text-black">
+                <small>
+                  Do not panic <cite title="Source Title">Just stay at home</cite>
+                </small>
+              </footer>
+            </blockquote>
+        </div>
+      </div>
     </div>
+
+
     <!-- Nigeria Map Starts -->
     <div class="container-fluid" style="margin: 1em auto;">
       <div class="row text-center" style="padding: 1em;">
@@ -109,17 +117,23 @@
     <!-- Dashboard Starts -->
     <div class="container-fluid map" style="margin: 1em auto;">
       <div class="row text-center" style="padding: 0.5em;">
-        <div class="col-6 col-lg-6">
-          <div class="panel">DEATHS <p style="color: #FB5757;" id="death"></p><p><img src="images/death.svg" alt=""></p></div>
+        <div class="col-6 col-lg-3">
+          <div class="panel">NEWLY CONFIRMED<p style="color: #FB5757; font-weight: 900; font-size: x-large;" id="newcon"></p><p><img src="images/death.svg" alt=""></p></div>
         </div>
-        <div class="col-6 col-lg-6">
-          <div class="panel">RECOVERED <p style="color: #FB5757;" id="recover"></p><p><img src="images/recover.svg" alt=""></p> </div>
+        <div class="col-6 col-lg-3">
+          <div class="panel">NEWLY RECOVERED<p style="color: rgb(43, 224, 119); font-weight: 900; font-size: x-large;" id="newrecovery"></p><p><img src="images/recover.svg" alt=""></p> </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="panel">TOTAL DEATHS <p style="color: #FB5757; font-weight: 900; font-size: x-large;" id="death"></p><p><img src="images/death.svg" alt=""></p></div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="panel">TOTAL RECOVERED <p style="color: rgb(43, 224, 119); font-weight: 900; font-size: x-large;" id="recover"></p><p><img src="images/recover.svg" alt=""></p> </div>
         </div>
         <div class="col-sm-6 col-lg-6">
-          <div class="panel">ACTIVE CASES<p style="color: #FB5757;" id="active"></p></div>
+          <div class="panel">ACTIVE CASES<p style="color: #FB5757; font-weight: 900; font-size: x-large;" id="active"></p></div>
         </div>
         <div class="col-sm-6 col-lg-6">
-          <div class="panel">CLOSED CASES<p style="color: #FB5757;" id="closed"></p></div>
+          <div class="panel">CLOSED CASES<p style="color: #FB5757; font-weight: 900; font-size: x-large;" id="closed"></p></div>
         </div>
       </div>
     </div>  
@@ -161,44 +175,17 @@
   <div class="container-fluid map">
       <div class="row text-center" style="padding-bottom: 5em;">
             <div class="col-sm-6 col-lg-4">
-              <div class="panel">CONFIRMED CASES<p style="color: #FB5757;" id="totalCases"></p><p><img src="images/recover.svg" alt=""></p></div>
+              <div class="panel">CONFIRMED CASES<p style="color: #FB5757; font-weight: 900; font-size: x-large;" id="totalCases"></p><p><img src="images/recover.svg" alt=""></p></div>
             </div>
               <div class="col-6 col-lg-4">
-                <div class="panel">DEATHS <p style="color: #FB5757;" id="totalDeaths"></p><p><img src="images/death.svg" alt=""></p></div>
+                <div class="panel">DEATHS <p style="color: #FB5757; font-weight: 900; font-size: x-large;" id="totalDeaths"></p><p><img src="images/death.svg" alt=""></p></div>
               </div>
               <div class="col-6 col-lg-4">
-                <div class="panel">RECOVERED<p style="color: #FB5757;" id="totalRecovery"></p><p><img src="images/recover.svg" alt=""></p> </div>
+                <div class="panel">RECOVERED<p style="color: rgb(43, 224, 119); font-weight: 900; font-size: x-large;" id="totalRecovery"></p><p><img src="images/recover.svg" alt=""></p> </div>
               </div>
               
       </div>
   </div>
-
-  <!-- World Map Tracking Ends -->
-    <!-- <div class="container-fluid bg-light">
-      <div class="row">
-        <h2 style="text-align: center; margin: auto; padding: 0em;">Contact NCDC</h2>
-      </div>
-    </div> -->
-
-    <!-- <div class="container-fluid bg-light" style="margin: auto;">
-      <div class="row text-center" style="padding-bottom: 4em;">
-        <div class="col-6 col-lg-4">
-          <div class="panel" style="color: gray;">WHATSAPP<p style="color: #FB5757;" id=""></p><p><a href="https://api.whatsapp.com/send?phone=2347087110839"><img src="images/Whatsapp.svg" alt=""></a></p></div>
-        </div>
-        <div class="col-6 col-lg-4">
-          <div class="panel" style="color: gray;">FACEBOOK<p style="color: #FB5757;" id=""></p><p><a href="https://facebook.com/NCDCgov"><img src="images/Facebook.svg" alt=""></a></p></div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-          <div class="panel" style="color: gray;">TWITTER<p style="color: #FB5757;" id=""></p><p><a href="https://twitter.com/NCDCgov"><img src="images/Twitter.svg" alt=""></a></p></div>
-        </div>
-        <div class="col-6 col-lg-6">
-          <div class="panel" style="color: gray;">SMS<p style="color: #FB5757;" id=""></p><p><a href="sms:+2348099555577?body=I need help, I need to be tested"><img src="images/Sms.svg" alt=""></a></p></div>
-        </div>
-        <div class="col-6 col-lg-6">
-          <div class="panel" style="color: gray;">Call<p style="color: #FB5757;" id=""></p><p><a href="tel:+2347087110839"><img src="images/calls.svg" alt=""></a></p></div>
-        </div>
-      </div>
-    </div>   -->
 
     <div class="container" id="hide-wall">
         <div class="card-deck text-center" id="cardStyle">
@@ -246,6 +233,50 @@
       </div>
     </div>
     <!-- Floating Covid-bot Button ends -->
+
+    <!-- Hand washing alert start -->
+    <div class="modal fade" id="handwash" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Handwash Alert!</h5>
+            <button type="button" class="close" data-toggle="modal"  data-target=".hand-wash-campaign" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">Have you washed your hands today?</div>
+          <div class="modal-footer">
+            <button class="btn btn-danger" data-toggle="modal"  data-target=".hand-wash-campaign">Sure</button>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Hand washing alert stop -->
+
+    <!-- Hand washing campaign start -->
+
+    <div class="modal fade hand-wash-campaign" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">#Handwash Social Campaign</h5>
+            
+          </div>
+          <div class="modal-body">Join the #handwash campaign by encouraging people out there to stay safe by washing their hands regularly</div>
+          <div class="modal-footer">
+            <a href="whatsapp://send?text=Hi%20guys,%20join%20me%20on%20the%20Covid9ja%20#handwash%20campaign%20against%20Covid-19,%20pledge%20to%20have%20your%20hands%20washed%20regularly%20on%20http://tiny.cc/ntypmz" data-action="share/whatsapp/share" onClick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" title="Share on WhatsApp" id="share-wa" class="btn btn-social-icon btn-whatsapp"><i class="fa fa-3x fa-whatsapp"></i></a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://tiny.cc/ntypmz&t=Join the Covid9ja #handwash campaign" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" title="Share on Facebook" id="share-fb" class="btn btn-social-icon btn-facebook"><i class="fa fa-3x fa-facebook-square"></i></a>
+            <a href="https://twitter.com/share?url=http://tiny.cc/ntypmz&text=Hi%20guys%2C%20join%20me%20on%20the%20Covid9ja%20%23handwash%20campaign%20against%20Covid-19%2C%20pledge%20to%20have%20your%20hands%20washed%20regularly%20on" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" title="Share on Twitter" id="share-tw" class="btn btn-social-icon btn-twitter"><i class="fa fa-3x fa-twitter-square"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hand washing campaign start -->
+
+   
+
     <!-- Footer -->
     <div class="container-fluid text-center d-none d-lg-block" id="footerContainer">
         <div class="row" id="footerRow">
@@ -264,13 +295,16 @@
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script>
-     
   $(document).ready(function() {
     $('#popchat').popover({
             'placement':'left',
             'content':'I am here to assist you!'
         }).popover('show').on('click',function(){ $(this).popover('hide')});
-  });
-        
-      </script>
+  });  
+</script>
+<script>
+  $(document).ready(function(){
+        $('#handwash').modal('show');
+    });
+</script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>

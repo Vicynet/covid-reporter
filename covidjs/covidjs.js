@@ -24,6 +24,8 @@ dash.onload = function()
                   document.getElementById("recover").innerHTML = data[i].TotalRecovered
                   document.getElementById("active").innerHTML = data[i].TotalConfirmed - (data[i].TotalDeaths + data[i].TotalRecovered)
                   document.getElementById('closed').innerHTML = data[i].TotalDeaths + data[i].TotalRecovered
+                  document.getElementById("newcon").innerHTML = data[i].NewConfirmed
+                  document.getElementById("newrecovery").innerHTML = data[i].NewRecovered
                 }
              
             }
