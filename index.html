@@ -31,6 +31,16 @@
     <link rel="stylesheet" href="css/main.css" type="text/css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- EXTERNAL CSS -->
+  <link rel="stylesheet" type="text/css" href="styling.css" />
+  <!-- MAPBOX -->
+  <script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+
 </head>
 <body>
     <!--Body Container-->
@@ -86,6 +96,7 @@
         <div class="col-sm-6 col-lg-3">
           <div class="panel">
             <p id="date"></p>
+            <img src="images/virus.svg" alt="washing-hands" width="32px" height="32px">
             <h5>Corona Virus Cases - Nigeria</h5>
             <p id="cases" style="color: #FB5757; font-weight: 900; font-size: x-large;"></p><p>TOTAL CONFIRMED</p></div>
             <blockquote class="blockquote mb-0 bg-light" style=" border-radius: 4px;">
@@ -99,20 +110,36 @@
       </div>
     </div>
 
-
+    <div class="container-fluid">
+      <div class="row">
+        <h2 style="text-align: center; margin: auto; padding: 0em; padding-top: 1em;">Geo-location Map</h2>
+      </div>
+    </div>
     <!-- Nigeria Map Starts -->
     <div class="container-fluid" style="margin: 1em auto;">
       <div class="row text-center" style="padding: 1em;">
         <div class="col-sm-6 col-lg-12">
-          <div class="embed-responsive embed-responsive-21by9" id="hide-wall">
-            <iframe class="embed-responsive-item" src="https://datawrapper.dwcdn.net/IBJXY/8/"></iframe>
-          </div>
-          <div class="embed-responsive embed-responsive-1by1" id="hide-desktop">
-            <iframe class="embed-responsive-item" src="https://datawrapper.dwcdn.net/IBJXY/8/"></iframe>
-          </div>
+          <!-- <div class="embed-responsive embed-responsive-21by9" id="hide-wall"> -->
+
+            <small>Click on States to zoom in </small>
+
+            <div id='map'>
+              <nav id="menu"></nav>
+            </div>
+            <div class='controlcontainer' style="padding: 1em;">
+              <h6>Day: <label id='active-day'>40 : 6/Mar/2020</label></h6>
+              <input id='slider' class='row' type='range' min='1' max='41' step='1' value='40'/>
+            </div>
+            <!-- <iframe class="embed-responsive-item" src="https://datawrapper.dwcdn.net/IBJXY/8/"></iframe> -->
+          <!-- </div> -->
+          <!-- <div class="embed-responsive embed-responsive-1by1" id="hide-desktop"> -->
+            <!-- <iframe class="embed-responsive-item" src="https://datawrapper.dwcdn.net/IBJXY/8/"></iframe> -->
+          <!-- </div> -->
         </div>
       </div>
     </div>
+    <script type="text/javascript" src="script.js"></script>
+
     <!-- Nigeria Map Ends -->
     <!-- Dashboard Starts -->
     <div class="container-fluid map" style="margin: 1em auto;">
@@ -130,10 +157,10 @@
           <div class="panel">TOTAL RECOVERED <p style="color: rgb(43, 224, 119); font-weight: 900; font-size: x-large;" id="recover"></p><p><img src="images/recover.svg" alt=""></p> </div>
         </div>
         <div class="col-sm-6 col-lg-6">
-          <div class="panel">ACTIVE CASES<p style="color: #FB5757; font-weight: 900; font-size: x-large;" id="active"></p></div>
+          <div class="panel">ACTIVE CASES<p style="color: #FB5757; font-weight: 900; font-size: x-large;" id="active"></p><p><img src="images/active.svg" alt="washing-hands" width="32px" height="32px"></p></div>
         </div>
         <div class="col-sm-6 col-lg-6">
-          <div class="panel">CLOSED CASES<p style="color: #FB5757; font-weight: 900; font-size: x-large;" id="closed"></p></div>
+          <div class="panel">CLOSED CASES<p style="color: #FB5757; font-weight: 900; font-size: x-large;" id="closed"></p><p><img src="images/closed.svg" alt="washing-hands" width="32px" height="32px"></p></div>
         </div>
       </div>
     </div>  
@@ -244,7 +271,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">Have you washed your hands today?</div>
+          <div class="modal-body"> <img src="images/handwash.svg" alt="washing-hands" width="32px" height="32px"> Have you washed your hands today?</div>
           <div class="modal-footer">
             <button class="btn btn-danger" data-toggle="modal"  data-target=".hand-wash-campaign">Sure</button>
            
@@ -263,7 +290,7 @@
             <h5 class="modal-title" id="staticBackdropLabel">#Handwash Social Campaign</h5>
             
           </div>
-          <div class="modal-body">Join the #handwash campaign by encouraging people out there to stay safe by washing their hands regularly</div>
+          <div class="modal-body"><img src="images/handwash.svg" alt="washing-hands" width="32px" height="32px"> Join the #handwash campaign by encouraging people out there to stay safe by washing their hands regularly</div>
           <div class="modal-footer">
             <a href="whatsapp://send?text=Hi%20guys,%20join%20me%20on%20the%20Covid9ja%20#handwash%20campaign%20against%20Covid-19,%20pledge%20to%20have%20your%20hands%20washed%20regularly%20on%20http://tiny.cc/ntypmz" data-action="share/whatsapp/share" onClick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" title="Share on WhatsApp" id="share-wa" class="btn btn-social-icon btn-whatsapp"><i class="fa fa-3x fa-whatsapp"></i></a>
             <a href="https://www.facebook.com/sharer/sharer.php?u=http://tiny.cc/ntypmz&t=Join the Covid9ja #handwash campaign" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" title="Share on Facebook" id="share-fb" class="btn btn-social-icon btn-facebook"><i class="fa fa-3x fa-facebook-square"></i></a>
