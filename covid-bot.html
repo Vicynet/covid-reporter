@@ -155,11 +155,12 @@
 												</select>
 
 												<select data-conv-question="You can select any of our available health agent.">
-													<option value="matthew" data-callback="matthew">Matthew</option>
+													<option value="livechat" data-callback="livechat">Live Chat</option>
+													<!-- <option value="matthew" data-callback="matthew">Matthew</option>
 													<option value="tokunbo" data-callback="tokunbo">Tokunbo</option>
 													<option value="qoyum" data-callback="qoyum">Qoyum</option>
 													<option value="amaka" data-callback="amaka">Amaka</option>
-													<option value="tolulope" data-callback="tolulope">Tolulope</option>
+													<option value="tolulope" data-callback="tolulope">Tolulope</option> -->
 												</select>
 												<select data-conv-question="Hope you got the help you desired?">
 													<option value="yes">Yes!</option>
@@ -735,6 +736,10 @@
 		}
 		function yorubacovid(stateWrapper, ready) {
 			window.open("audio/yoruba-covid.mp3");
+			ready();
+		}
+		function livechat(stateWrapper, ready) {
+			window.open("/livechat.html");
 			ready();
 		}
 
