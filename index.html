@@ -110,6 +110,25 @@
       </div>
     </div>
 
+    <div class="container-fluid text-justify">
+      <div class="row">
+        <div class="alert alert-info" role="alert">
+          This web application has several important information about covid-19 and provides daily updates about Nigeria and the world. 
+          <p>One of its key features is that it also allows users take a self test through an interaction with an indigenous bot; asking targeted questions that reveal their current health status with regards to the corona virus.</p>
+          <p>Data is sourced from Johns Hopkins CSSE through https://covid19api.com</p>
+      </div>
+    </div>
+
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <h4 class="alert-heading">Handwash Alert! <span><img src="images/handwash.svg" alt="washing-hands" width="32px" height="32px"></span></h4> 
+      <p>Have you washed your hands today?</p>
+      <hr>
+      <button class="btn btn-danger" data-toggle="modal"  data-target=".hand-wash-campaign">Sure</button>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
     <div class="container-fluid">
       <div class="row">
         <h2 style="text-align: center; margin: auto; padding: 0em; padding-top: 1em;">Geo-location Map</h2>
@@ -300,26 +319,6 @@
     </div>
     <!-- Floating Covid-bot Button ends -->
 
-    <!-- Hand washing alert start -->
-    <div class="modal fade" id="handwash" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="staticBackdropLabel">Handwash Alert!</h5>
-            <button type="button" class="close" data-toggle="modal"  data-target=".hand-wash-campaign" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body"> <img src="images/handwash.svg" alt="washing-hands" width="32px" height="32px"> Have you washed your hands today?</div>
-          <div class="modal-footer">
-            <button class="btn btn-danger" data-toggle="modal"  data-target=".hand-wash-campaign">Sure</button>
-           
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Hand washing alert stop -->
-
     <!-- Hand washing campaign start -->
 
     <div class="modal fade hand-wash-campaign" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -327,7 +326,9 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="staticBackdropLabel">#Handwash Social Campaign</h5>
-            
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
           <div class="modal-body"><img src="images/handwash.svg" alt="washing-hands" width="32px" height="32px"> Join the #handwash campaign by encouraging people out there to stay safe by washing their hands regularly</div>
           <div class="modal-footer">
