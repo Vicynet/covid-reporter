@@ -470,7 +470,9 @@ map.on('load', function() {
         type: 'circle',
         source: {
           type: 'geojson',
-          data: 'https://raw.githubusercontent.com/everybees/covid-19-nigeria-updates/master/covid-19_nigeria_cases.geojson' // replace this with the url of your own geojson
+          // data: 'https://raw.githubusercontent.com/everybees/covid-19-nigeria-updates/master/covid-19_nigeria_cases.geojson' // replace this with the url of your own geojson
+          data: 'https://raw.githubusercontent.com/everybees/covid-19_nigeria/master/covid-19_nigeria_cases.geojson' // replace this with the url of your own geojson
+
         },
         'layout': {
               'visibility': 'visible',
