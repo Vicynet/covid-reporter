@@ -444,8 +444,8 @@ container: 'map',
 style: 'mapbox://styles/everybees/ck8a1cbp90mu61io562pj8dnd',
 center: [8.993, 9.807],
 zoom: 4.80,
-maxZoom: 8,
-// minZoom: 4.23,
+maxZoom: 7.58, //maxZoom: 8,
+minZoom: 4.23,// minZoom: 4.23, not here before
 bearing: start_viz.bearing,
 pitch: start_stats_mobile.pitch
 });
@@ -492,7 +492,7 @@ map.on('load', function() {
           ],
           'circle-opacity': 0.75
         },
-         filter: ['==', ['number', ['get', 'days']], 40]
+         filter: ['==', ['number', ['get', 'days']], 44] //made change filter: ['==', ['number', ['get', 'days']], 40]
       });
 
       map.addLayer({
@@ -513,7 +513,7 @@ map.on('load', function() {
         'paint': {
             'text-color': 'rgba(0,0,0,0.5)'
         },
-         filter: ['==', ['number', ['get', 'days']], 40]
+         filter: ['==', ['number', ['get', 'days']], 44] //filter: ['==', ['number', ['get', 'days']], 40]
       });
 
       map.addLayer({
@@ -521,7 +521,9 @@ map.on('load', function() {
         'type': 'circle',
         'source': {
           type: 'geojson',
-          data: 'https://raw.githubusercontent.com/everybees/covid-19-nigeria-updates/master/testing_labs.geojson'
+          // data: 'https://raw.githubusercontent.com/everybees/covid-19-nigeria-updates/master/testing_labs.geojson'
+          data: 'https://raw.githubusercontent.com/everybees/covid-19_nigeria/master/testing_labs.geojson'
+
         },
         'layout': {
               'visibility': 'none'
@@ -538,7 +540,9 @@ map.on('load', function() {
           'type': 'fill',
           'source': {
             type: 'geojson',
-            data: 'https://raw.githubusercontent.com/everybees/covid-19-nigeria-updates/master/Nigeria%20Administartive%20Boundaries.geojson',
+            // data: 'https://raw.githubusercontent.com/everybees/covid-19-nigeria-updates/master/Nigeria%20Administartive%20Boundaries.geojson',
+            data: 'https://raw.githubusercontent.com/everybees/covid-19_nigeria/master/Nigeria%20Administartive%20Boundaries.geojson',
+
           },
           // 'source-layer': 'packed-buildings',
           'layout': {
@@ -838,7 +842,7 @@ document.getElementById('benue').addEventListener('click', function() {
 });
 
 
-document.getElementById('akwaibom').addEventListener('click', function() {
+document.getElementById('akwa').addEventListener('click', function() {
     // Fly to a random location by offsetting the point
     // by up to 5 degrees.
     map.flyTo({
@@ -852,6 +856,83 @@ document.getElementById('akwaibom').addEventListener('click', function() {
         essential: true // this animation is considered essential with respect to prefers-reduced-motion
     });
 });
+
+document.getElementById('anambra').addEventListener('click', function() {
+  // Fly to a random location by offsetting the point
+  // by up to 5 degrees.
+  map.flyTo({
+      bearing: 27,
+      center: [7.06999711, 6.210433572],
+      duration: 3000,
+      zoom: 9,
+      pitch: 50,
+      speed: 0.6,
+      // style: 'mapbox://styles/mapbox/streets-v11',
+      essential: true // this animation is considered essential with respect to prefers-reduced-motion
+  });
+});
+
+document.getElementById('delta').addEventListener('click', function() {
+  // Fly to a random location by offsetting the point
+  // by up to 5 degrees.
+  map.flyTo({
+      bearing: 27,
+      center: [5.680004434, 5.890427265],
+      duration: 3000,
+      zoom: 9,
+      pitch: 50,
+      speed: 0.6,
+      // style: 'mapbox://styles/mapbox/streets-v11',
+      essential: true // this animation is considered essential with respect to prefers-reduced-motion
+  });
+});
+
+document.getElementById('katsina').addEventListener('click', function() {
+  // Fly to a random location by offsetting the point
+  // by up to 5 degrees.
+  map.flyTo({
+      bearing: 27,
+      center: [7.320007689, 11.5203937],
+      duration: 3000,
+      zoom: 9,
+      pitch: 50,
+      speed: 0.6,
+      // style: 'mapbox://styles/mapbox/streets-v11',
+      essential: true // this animation is considered essential with respect to prefers-reduced-motion
+  });
+});
+
+document.getElementById('kwara').addEventListener('click', function() {
+  // Fly to a random location by offsetting the point
+  // by up to 5 degrees.
+  map.flyTo({
+      bearing: 27,
+      center: [4.549995889, 8.490010192],
+      duration: 3000,
+      zoom: 9,
+      pitch: 50,
+      speed: 0.6,
+      // style: 'mapbox://styles/mapbox/streets-v11',
+      essential: true // this animation is considered essential with respect to prefers-reduced-motion
+  });
+});
+
+document.getElementById('niger').addEventListener('click', function() {
+  // Fly to a random location by offsetting the point
+  // by up to 5 degrees.
+  map.flyTo({
+      bearing: 27,
+      center: [5.469939737, 10.4003587],
+      duration: 3000,
+      zoom: 9,
+      pitch: 50,
+      speed: 0.6,
+      // style: 'mapbox://styles/mapbox/streets-v11',
+      essential: true // this animation is considered essential with respect to prefers-reduced-motion
+  });
+});
+
+
 
 document.getElementById('home').addEventListener('click', function() {
     // Fly to a random location by offsetting the point
