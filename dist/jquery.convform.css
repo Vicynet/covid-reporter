@@ -219,7 +219,8 @@ div.conv-form-wrapper div.options div.option {
     padding: 7px 12px;
     /* border: 1px solid rgba(6,153,184,0.3); */
     border: 1px solid #e66465;
-    display: inline-block;
+    /* display: inline-block; */
+    display: block;
     margin: 5px;
     background: #fff;
     /* color: #06c5a6;#e66465 */
