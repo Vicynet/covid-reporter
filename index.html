@@ -141,44 +141,83 @@
           <!-- <div class="embed-responsive embed-responsive-21by9" id="hide-wall"> -->
 
             <small>Click on States to zoom in </small>
-            <marquee behavior="scroll" style="font-family:Arial, sans-serif; font-size: 15px;  background-color: black; color: white;" direction="left" scrollamount="5" onmouseover="this.stop()" onmouseout="this.start()">
-              <a id="lagos" ></a><span id="lagosCases"></span> 
-              <a id="fct" ></a><span id="fctCases"></span> 
-              <a id="abia" ></a><span id="abiaCases"></span>
-              <a id="adamawa" ></a><span id="adamawaCases"></span>
-              <a id="akwa" ></a><span id="akwaCases"></span>
-              <a id="anambra" ></a><span id="anambraCases"></span>
-              <a id="bauchi" ></a><span id="bauchiCases"></span>
-              <a id="bayelsa" ></a><span id="bayelsaCases"></span>
-              <a id="benue" ></a><span id="benueCases"></span> 
-              <a id="borno" ></a><span id="bornoCases"></span> 
-              <a id="cross" ></a><span id="crossCases"></span> 
-              <a id="delta" ></a><span id="deltaCases"></span> 
-              <a id="ebonyi" ></a><span id="ebonyiCases"></span>
-              <a id="edo" ></a><span id="edoCases"></span>
-              <a id="ekiti" ></a><span id="ekitiCases"></span> 
-              <a id="enugu" ></a><span id="enuguCases"></span> 
-              <a id="gombe" ></a><span id="gombeCases"></span> 
-              <a id="imo" ></a><span id="imoCases"></span>
-              <a id="jigawa" ></a><span id="jigawaCases"></span> 
-              <a id="kaduna" ></a><span id="kadunaCases"></span> 
-              <a id="kano" ></a><span id="kanoCases"></span>
-              <a id="katsina" ></a><span id="katsinaCases"></span> 
-              <a id="kebbi" ></a><span id="kebbiCases"></span>
-              <a id="kogi" ></a><span id="kogiCases"></span>
-              <a id="kwara" ></a><span id="kwaraCases"></span> 
-              <a id="nassarawa" ></a><span id="nassarawaCases"></span>
-              <a id="niger" ></a><span id="nigerCases"></span> 
-              <a id="ogun" ></a><span id="ogunCases"></span> 
-              <a id="ondo" ></a><span id="ondoCases"></span> 
-              <a id="osun" ></a><span id="osunCases"></span>
-              <a id="oyo" ></a><span id="oyoCases"></span>
-              <a id="plateau" ></a><span id="plateauCases"></span>
-              <a id="rivers" ></a><span id="riversCases"></span>
-              <a id="sokoto" ></a><span id="sokotoCases"></span> 
-              <a id="taraba" ></a><span id="tarabaCases"></span> 
-              <a id="yobe" ></a><span id="yobeCases"></span> 
-              <a id="zamfara" ></a><span id="zamfaraCases"></span>
+            <marquee behavior="scroll" style="font-family:Arial, sans-serif; font-size: 15px; color: white;" direction="left" scrollamount="5" onmouseover="this.stop()" onmouseout="this.start()">
+            <!-- <marquee behavior="scroll" style="font-family:Arial, sans-serif; font-size: 15px;  background-color: black; color: white;" direction="left" scrollamount="5" onmouseover="this.stop()" onmouseout="this.start()"> -->
+              <a style="cursor: pointer;"><span class="badge badge-danger" id="lagos" ></span>
+              <span class="badge badge-light" id="lagosCases"></span></a>
+              <a style="cursor: pointer;"><span class="badge badge-danger" id="fct" ></span>
+              <span class="badge badge-light" id="fctCases"></span></a>
+              <a style="cursor: pointer;"><span class="badge badge-danger" id="abia" ></span>
+              <span class="badge badge-light" id="abiaCases"></span></a>
+              <a style="cursor: pointer;"><span class="badge badge-danger" id="adamawa" ></span>
+              <span class="badge badge-light" id="adamawaCases"></span></a>
+              <a style="cursor: pointer;"><span class="badge badge-danger" id="akwa" ></span>
+              <span class="badge badge-light" id="akwaCases"></span></a>
+              <a style="cursor: pointer;"><span class="badge badge-danger" id="anambra" ></span>
+              <span class="badge badge-light" id="anambraCases"></span></a>
+              <a style="cursor: pointer;"><span class="badge badge-danger" id="bauchi" ></span>
+              <span class="badge badge-light" id="bauchiCases"></span></a>
+              <a style="cursor: pointer;"><span class="badge badge-danger" id="bayelsa" ></span>
+              <span class="badge badge-light" id="bayelsaCases"></span></a>
+              <a style="cursor: pointer;"><span class="badge badge-danger" id="benue" ></span>
+              <span class="badge badge-light" id="benueCases"></span></a>
+              <a style="cursor: pointer;"><span class="badge badge-danger" id="borno" ></span>
+              <span class="badge badge-light" id="bornoCases"></span></a>
+              <a style="cursor: pointer;"><span class="badge badge-danger" id="cross" ></span>
+              <span class="badge badge-light" id="crossCases"></span></a>
+              <a style="cursor: pointer;"><span class="badge badge-danger" id="delta" ></span>
+              <span class="badge badge-light" id="deltaCases"></span></a>
+              <a style="cursor: pointer;"><span class="badge badge-danger" id="ebonyi" ></span>
+              <span class="badge badge-light" id="ebonyiCases"></span></a>
+              <a style="cursor: pointer;"><span class="badge badge-danger" id="edo" ></span>
+              <span class="badge badge-light" id="edoCases"></span></a>
+              <a style="cursor: pointer;"><span class="badge badge-danger" id="ekiti" ></span>
+              <span class="badge badge-light" id="ekitiCases"></span></a>
+              <a style="cursor: pointer;"><span class="badge badge-danger" id="enugu" ></span>
+              <span class="badge badge-light" id="enuguCases"></span></a>
+              <a style="cursor: pointer;"><span class="badge badge-danger" id="gombe" ></span>
+              <span class="badge badge-light" id="gombeCases"></span></a>
+              <a style="cursor: pointer;"><span class="badge badge-danger" id="imo" ></span>
+              <span class="badge badge-light" id="imoCases"></span></a>
+              <a style="cursor: pointer;"><span class="badge badge-danger" id="jigawa" ></span>
+              <span class="badge badge-light" id="jigawaCases"></span></a>
+              <a style="cursor: pointer;"><span class="badge badge-danger" id="kaduna" ></span>
+              <span class="badge badge-light" id="kadunaCases"></span></a>
+              <a style="cursor: pointer;"><span class="badge badge-danger" id="kano" ></span>
+              <span class="badge badge-light" id="kanoCases"></span></a>
+              <a style="cursor: pointer;"><span class="badge badge-danger" id="katsina" ></span>
+              <span class="badge badge-light" id="katsinaCases"></span></a>
+              <a style="cursor: pointer;"><span class="badge badge-danger" id="kebbi" ></span>
+              <span class="badge badge-light" id="kebbiCases"></span></a>
+              <a style="cursor: pointer;"><span class="badge badge-danger" id="kogi" ></span>
+              <span class="badge badge-light" id="kogiCases"></span></a>
+              <a style="cursor: pointer;"><span class="badge badge-danger" id="kwara" ></span>
+              <span class="badge badge-light" id="kwaraCases"></span></a>
+              <a style="cursor: pointer;"><span class="badge badge-danger" id="nassarawa" ></span>
+              <span class="badge badge-light" id="nassarawaCases"></span></a>
+              <a style="cursor: pointer;"><span class="badge badge-danger" id="niger" ></span>
+              <span class="badge badge-light" id="nigerCases"></span></a>
+              <a style="cursor: pointer;"><span class="badge badge-danger" id="ogun" ></span>
+              <span class="badge badge-light" id="ogunCases"></span></a>
+              <a style="cursor: pointer;"><span class="badge badge-danger" id="ondo" ></span>
+              <span class="badge badge-light" id="ondoCases"></span></a>
+              <a style="cursor: pointer;"><span class="badge badge-danger" id="osun" ></span>
+              <span class="badge badge-light" id="osunCases"></span></a>
+              <a style="cursor: pointer;"><span class="badge badge-danger" id="oyo" ></span>
+              <span class="badge badge-light" id="oyoCases"></span></a>
+              <a style="cursor: pointer;"><span class="badge badge-danger" id="plateau" ></span>
+              <span class="badge badge-light" id="plateauCases"></span></a>
+              <a style="cursor: pointer;"><span class="badge badge-danger" id="rivers" ></span>
+              <span class="badge badge-light" id="riversCases"></span></a>
+              <a style="cursor: pointer;"><span class="badge badge-danger" id="sokoto" ></span>
+              <span class="badge badge-light" id="sokotoCases"></span></a>
+              <a style="cursor: pointer;"><span class="badge badge-danger" id="taraba" ></span>
+              <span class="badge badge-light" id="tarabaCases"></span></a>
+              <a style="cursor: pointer;"><span class="badge badge-danger" id="yobe" ></span>
+              <span class="badge badge-light" id="yobeCases"></span></a>
+              <a style="cursor: pointer;"><span class="badge badge-danger" id="zamfara" ></span>
+              <span class="badge badge-light" id="zamfaraCases"></span></a>
+              
             </marquee>
 
             <div id='map'>
